@@ -2,7 +2,7 @@
 稳定版存档：<https://github.com/Bush2021/chrome_installer/releases>
 
 最后检测更新时间
-2024-04-14 20:04:05 (UTC-4)
+2024-04-14 23:50:09 (UTC-4)
 
 
 ## 目录
