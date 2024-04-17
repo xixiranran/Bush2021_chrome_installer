@@ -2,7 +2,7 @@
 稳定版存档：<https://github.com/Bush2021/chrome_installer/releases>
 
 最后检测更新时间
-2024-04-16 19:17:47 (UTC-4)
+2024-04-16 21:13:26 (UTC-4)
 
 
 ## 目录
@@ -40,16 +40,16 @@
 **下载链接**：[https://dl.google.com/release2/chrome/ac3sxbf2pmwoahgarxjvoergxcca_124.0.6367.60/124.0.6367.60_chrome_installer.exe](https://dl.google.com/release2/chrome/ac3sxbf2pmwoahgarxjvoergxcca_124.0.6367.60/124.0.6367.60_chrome_installer.exe)  
 
 ## win dev x86
-**最新版本**：125.0.6396.3  
-**文件大小**：96.76 MB  
-**校验值（Sha256）**：a13a3acb5a173bc8488ac37d62fb99d45e867e279c909ee91b2bcf4785fb3766  
-**下载链接**：[https://dl.google.com/release2/chrome/fajojlhhhmhcdcb77yzfw67jn4_125.0.6396.3/125.0.6396.3_chrome_installer.exe](https://dl.google.com/release2/chrome/fajojlhhhmhcdcb77yzfw67jn4_125.0.6396.3/125.0.6396.3_chrome_installer.exe)  
+**最新版本**：125.0.6420.3  
+**文件大小**：97.3 MB  
+**校验值（Sha256）**：8afdd243de71655147af46b57592e339c17520ba9ac1c50e121974fce3ed6a15  
+**下载链接**：[https://dl.google.com/release2/chrome/adyfm2m7zskvy5lmwbrddetffima_125.0.6420.3/125.0.6420.3_chrome_installer.exe](https://dl.google.com/release2/chrome/adyfm2m7zskvy5lmwbrddetffima_125.0.6420.3/125.0.6420.3_chrome_installer.exe)  
 
 ## win dev x64
-**最新版本**：125.0.6396.3  
-**文件大小**：107.47 MB  
-**校验值（Sha256）**：a316082c9bcd231ae3c46ce59e4cec659f6dd40f1fbc96ae7d3509e2abc85414  
-**下载链接**：[https://dl.google.com/release2/chrome/accw6vrwba4tpcv64sezbhtiru7a_125.0.6396.3/125.0.6396.3_chrome_installer.exe](https://dl.google.com/release2/chrome/accw6vrwba4tpcv64sezbhtiru7a_125.0.6396.3/125.0.6396.3_chrome_installer.exe)  
+**最新版本**：125.0.6420.3  
+**文件大小**：107.9 MB  
+**校验值（Sha256）**：6a4643d12141efeeff0b8cc0096dde0b93736047c1bfb130504e5bdc5ea1bc8f  
+**下载链接**：[https://dl.google.com/release2/chrome/adcrs6xzzlcjwbhfi4twbaxyeeiq_125.0.6420.3/125.0.6420.3_chrome_installer.exe](https://dl.google.com/release2/chrome/adcrs6xzzlcjwbhfi4twbaxyeeiq_125.0.6420.3/125.0.6420.3_chrome_installer.exe)  
 
 ## win canary x86
 **最新版本**：125.0.6422.3  
