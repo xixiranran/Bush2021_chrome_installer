@@ -29,7 +29,7 @@
                 "label": "Dev \u5f00\u53d1\u7248",
                 "updatetime": 1714151404877
             },
-            "canary": {
+            "nightly": {
                 "version": "126.0.6447.1",
                 "size": 129165872,
                 "sha1": "fc74f6946e4fbc17a84b2a9cb242b041fa0879cb",
@@ -67,7 +67,7 @@
                 "label": "Dev \u5f00\u53d1\u7248",
                 "updatetime": 1714151408779
             },
-            "canary": {
+            "nightly": {
                 "version": "126.0.6447.1",
                 "size": 148585008,
                 "sha1": "7d046667cc26659f12cb921d1f83339ef7c945de",
