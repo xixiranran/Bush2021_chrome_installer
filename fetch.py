@@ -109,7 +109,7 @@ def decode(text):
     package_sha256 = package_node.get('hash_sha256')
 
     url_nodes = root.findall('.//url')
-    url = url_nodes.get('codebase') + package_name
+    url = url_nodes[0].get('codebase') + package_name
     # url_prefixes = []
     # for node in url_nodes:
     #     url_prefixes.append(node.get('codebase') + package_name)
