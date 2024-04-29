@@ -1,74 +1,105 @@
-import base64
-import json
-import xml.etree.ElementTree as tree
-from datetime import datetime, timezone, timedelta
-
 import requests
+import xml.etree.ElementTree as tree
+import base64
+import binascii
+import json
+from datetime import datetime, timezone
+import time
 
 info = {
-    "win_stable_x86": {
-        "os": '''platform="win" version="10.0" sp="" arch="x86"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" version="" nextversion="" lang="en" brand=""  installage="-1" installdate="-1" iid="{11111111-1111-1111-1111-111111111111}"''',
+    "win_x86": {
+        "stable": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{C6CB981E-DB30-4876-8639-109F8933582C}"''',
+            "apVersion": '''"x86-ni"''',
+        },
+        "beta": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{CB2150F2-595F-4633-891A-E39720CE0531}"''',
+            "apVersion": '''"x86-dev"''',
+        },
+        "dev": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{103BD053-949B-43A8-9120-2E424887DE11}"''',
+            "apVersion": '''"x86-be"''',
+        },
+        "nightly": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{AFE6A462-C574-4B8A-AF43-4CC60DF4563B}"''',
+            "apVersion": '''"x86-rel"''',
+        }
     },
-    "win_stable_x64": {
-        "os": '''platform="win" version="10.0" sp="" arch="x64"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" version="" nextversion="" lang="en" brand=""  installage="-1" installdate="-1" iid="{11111111-1111-1111-1111-111111111111}"''',
-    },
-    "win_beta_x86": {
-        "os": '''platform="win" version="10.0" arch="x86"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" ap="1.1-beta"''',
-    },
-    "win_beta_x64": {
-        "os": '''platform="win" version="10.0" arch="x64"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" ap="x64-beta-multi-chrome"''',
-    },
-    "win_dev_x86": {
-        "os": '''platform="win" version="10.0" arch="x86"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" ap="2.0-dev"''',
-    },
-    "win_dev_x64": {
-        "os": '''platform="win" version="10.0" arch="x64"''',
-        "app": '''appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" ap="x64-dev-multi-chrome"''',
-    },
-    "win_canary_x86": {
-        "os": '''platform="win" version="10.0" arch="x86"''',
-        "app": '''appid="{4EA16AC7-FD5A-47C3-875B-DBF4A2008C20}" ap="x86-canary"''',
-    },
-    "win_canary_x64": {
-        "os": '''platform="win" version="10.0" arch="x64"''',
-        "app": '''appid="{4EA16AC7-FD5A-47C3-875B-DBF4A2008C20}" ap="x64-canary"''',
-    },
+    "win_x64": {
+        "stable": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{C6CB981E-DB30-4876-8639-109F8933582C}"''',
+            "apVersion": '''"x64-ni"''',
+        },
+        "beta": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{CB2150F2-595F-4633-891A-E39720CE0531}"''',
+            "apVersion": '''"x64-dev"''',
+        },
+        "dev": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{103BD053-949B-43A8-9120-2E424887DE11}"''',
+            "apVersion": '''"x64-be"''',
+        },
+        "nightly": {
+            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
+            "appid": '''"{AFE6A462-C574-4B8A-AF43-4CC60DF4563B}"''',
+            "apVersion": '''"x64-rel"''',
+        }
+    }
 }
 
-update_url = 'https://tools.google.com/service/update2'
+update_url = 'https://updates.bravesoftware.com/service/update2'
 
 session = requests.Session()
 
 
-def post(os: str, app: str) -> str:
+def post(bid: str, appid: str, apVersion: str) -> str:
     xml = f'''<?xml version="1.0" encoding="UTF-8"?>
-    <request protocol="3.0" updater="Omaha" updaterversion="1.3.36.372" shell_version="1.3.36.352" ismachine="0" sessionid="{11111111-1111-1111-1111-111111111111}" installsource="taggedmi" requestid="{11111111-1111-1111-1111-111111111111}" dedup="cr" domainjoined="0">
-    <hw physmemory="16" sse="1" sse2="1" sse3="1" ssse3="1" sse41="1" sse42="1" avx="1"/>
-    <os {os}/>
-    <app {app}>
+    <request protocol="3.0" version="1.3.99.0" shell_version="1.3.99.0" ismachine="1" sessionid={bid} installsource="taggedmi" testsource="auto" requestid={bid} dedup="cr">
+    <os platform="win" version="" sp="" arch="x86"/>
+    <app appid={appid} version="" nextversion="" ap={apVersion} lang="en" brand="" client="" installage="-1" installdate="-1">
     <updatecheck/>
-    <data name="install" index="empty"/>
     </app>
     </request>'''
+    
+    # headers = {
+    #     'Content-Type': 'application/x-www-form-urlencoded',
+    #     'User-Agent': 'Google Update/1.3.101.0;winhttp'
+    # }
+    
     r = session.post(update_url, data=xml)
+    # r = session.post(update_url, data=xml, headers=headers, verify=False)
+    print("Request Headers:", r.request.headers)
+    print("Request Body:", r.request.body)
+    print("Response Status Code:", r.status_code)
+    print("Response Headers:", r.headers)
+    print("Response Body:", r.text)
     return r.text
 
-
 def decode(text):
-    root = tree.fromstring(text)
-
+    try:
+        # 尝试解析XML数据
+        root = tree.fromstring(text)
+    except tree.ParseError as e:
+        # 如果解析失败，打印错误信息
+        print("An error occurred while parsing XML:", e)
+        # 这里可以添加更多的错误处理逻辑，比如尝试修复数据或者退出函数
+        # return None 或者 re-raise 异常等
+        return None
     manifest_node = root.find('.//manifest')
     if manifest_node is None:
         print("Error: manifest_node is None")
         return
-
+    #print("text:",text)
+    #print("root:",root)
+    #print("manifest_node:",manifest_node)
     manifest_version = manifest_node.get('version')
-
+    
     package_node = root.find('.//package')
     package_name = package_node.get('name')
     package_size = int(package_node.get('size'))
@@ -78,90 +109,107 @@ def decode(text):
     package_sha256 = package_node.get('hash_sha256')
 
     url_nodes = root.findall('.//url')
+    url = url_nodes.get('codebase') + package_name
+    # url_prefixes = []
+    # for node in url_nodes:
+    #     url_prefixes.append(node.get('codebase') + package_name)
 
-    url_prefixes = []
-    for node in url_nodes:
-        url_prefixes.append(node.get('codebase') + package_name)
-
-    return {"version": manifest_version, "size": package_size, "sha1": package_sha1, "sha256": package_sha256,
-            "urls": url_prefixes}
-
-
+    return {"version":manifest_version, "size":package_size, "sha1":package_sha1, "sha256":package_sha256, "url":url}
+    
 results = {}
-
 
 def version_tuple(v):
     return tuple(map(int, (v.split("."))))
 
-
-def load_json() -> None:
+#暂时没有想到办法较少post请求次数。
+def fetchandsavejson():
     global results
-    with open('data.json', 'r') as f:
-        results = json.load(f)
+    while True:
+        try:
+            with open('data.json', 'r') as f:
+                results = json.load(f)
+                break
+        except FileNotFoundError:
+            print(f"data.json文件不存在。")
+        except PermissionError:
+            print(f"没有权限读取data.json文件。")
+        except json.JSONDecodeError:
+            print(f"data.json文件包含无效的JSON格式。")
+        except Exception as e:
+            print(f"读取文件时发生了一个错误：{e}")
+        time.sleep(1)
+        
+    #请求服务器获取数据并更新到data.json的win_x86字典中
+    for arch in ['win_x86', 'win_x64']:
+        for k, v in info[arch].items():
+            #print("k:",k)     #stable
+            print("v:",v)
+            # print("v:",v)     #{'os': 'platform="win" version="10.0" sp="" arch="x86"', 'app': 'appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" version="" nextversion="" lang="en" brand=""  installage="-1" installdate="-1" iid="{11111111-1111-1111-1111-111111111111}"'}
+            #print("info['win_x86']:",info['win_x86'])
+            #print("info['win_x86'].items():",info['win_x86'].items())
+            #下面while true是为了解决post偶尔抽风得到的数据为none时，解决AttributeError: 'NoneType'对象没有'get'属性的问题
+            # 设置一个循环，当响应不为None时停止
+            while True:
+                # 发送POST请求
+                res = post(**v)
+                data = decode(res)
+                if data is None:
+                    print("Error: decode返回为None",arch,k)
+                    continue
+                else:
+                    break
+                    
+            if "stable" in k:
+                data['label'] = "Stable 稳定版"
+                #results['data']['win_x86'][k].update({'label': 'Stable 稳定版'})
+            elif "beta" in k:
+                data['label'] = "Beta 测试版"
+                #results['data']['win_x86'][k].update({'label': 'Beta 测试版'})
+            elif "dev" in k:
+                data['label'] = "Dev 开发版"
+                #results['data']['win_x86'][k].update({'label': 'Dev 开发版'})
+            elif "nightly" in k:
+                data['label'] = "Nightly 每夜版"
+                #results['data']['win_x86'][k].update({'label': 'Canary 金丝雀版'})
+            #print("res:",res)
+            #print("data2:",data)
+            #print("results:",results)
+            #下面的代码因为我把data.json的格式改了，所以执行有问题，且我想到一个问题，就是他这个判断是判断的stable版本有无更新，有更新才执行后面的代码，但是有可能stable没更新，其他版本有更新，这样就会导致更新不及时，所以索性注释掉这个代码，让他按github action设置的时间频率，每次执行的时候都重新生成data.json，而且注释这段代码github action执行后自己也会判断生成的文件有无变化，如果没变化则不自动更新生成
+            #if version_tuple(data['version']) < version_tuple():
+            #    print("ignore", k, data['version'])
+            #    continue
+            #print("data['time']:",data['time'])
+            #print("results['data']['win_x86']1:",results['data']['win_x86'])
+            if version_tuple(results['data'][arch][k]['version']) < version_tuple(data['version']):
+                print("results['data'][arch][k]['updatetime']:",arch,k,results['data'][arch][k]['updatetime'])
+                data['updatetime'] = int(datetime.now().timestamp() * 1000)
+                print("results['data'][arch][k]['version']:",arch,k,results['data'][arch][k]['version'])
+                print("data['version']:",data['version'])
+                print("data['updatetime']:",data['updatetime'])
+                #如果版本有更新则输出更新的data的所有内容，如果版本号没更新就跳出本次循环，这样写是因为版本号请求有时候会变，一会变成新版本，一会又调到老版本了。这样写能保证data.json文件中的版本号是最新的。
+                results['data'][arch].update({k: data})
+                print("updated results['data'][arch][k]['version']:",k,results['data'][arch][k]['version'])
+                # with open('data.json', 'w') as f:
+                #     json.dump(results, f, indent=4)
+            # else:
+            #     continue
+                # data['updatetime'] = results['data']['win_x86'][k]['updatetime']
 
-
-def fetch():
-    for k, v in info.items():
-        res = post(**v)
-        data = decode(res)
-        if data is None:
-            print(f"Error: No data returned for {k}")
-            continue
-        if version_tuple(data['version']) < version_tuple(results[k]['version']):
-            print("ignore", k, data['version'])
-            continue
-        results[k] = data
-
+    #data.json里面win7的数据是固定不变的
+    
+    #获取最新时间并更新到data.json的time字典中
+    results.update({'time': int(datetime.now().timestamp() * 1000)})
+    with open('data.json', 'w') as f:
+        json.dump(results, f, indent=4)
 
 suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
-
-
 def humansize(nbytes):
     i = 0
-    while nbytes >= 1024 and i < len(suffixes) - 1:
+    while nbytes >= 1024 and i < len(suffixes)-1:
         nbytes /= 1024.
         i += 1
     f = ('%.2f' % nbytes).rstrip('0').rstrip('.')
     return '%s %s' % (f, suffixes[i])
 
+fetchandsavejson()
 
-def save_md() -> None:
-    index_url = "https://github.com/Bush2021/chrome_installer?tab=readme-ov-file#"
-    with open('readme.md', 'w') as f:
-        f.write(f'# Google Chrome 离线安装包（请使用 7-Zip 解压）\n')
-        f.write(f'稳定版存档：<https://github.com/Bush2021/chrome_installer/releases>\n\n')
-        f.write(f'最后检测更新时间\n')
-        now = datetime.now(timezone(timedelta(hours=-4)))
-        now_str = now.strftime("%Y-%m-%d %H:%M:%S (UTC-4)")
-        f.write(f'{now_str}\n\n')
-        f.write('\n')
-        f.write(f'## 目录\n')
-        for name in results.keys():
-            title = name.replace("_", " ")
-            link = index_url + title.replace(" ", "-")
-            f.write(f'* [{title}]({link})\n')
-        f.write('\n')
-        for name, version in results.items():
-            f.write(f'## {name.replace("_", " ")}\n')
-            f.write(f'**最新版本**：{version["version"]}  \n')
-            f.write(f'**文件大小**：{humansize(version["size"])}  \n')
-            f.write(f'**校验值（Sha256）**：{version["sha256"]}  \n')
-            for url in version["urls"]:
-                if url.startswith("https://dl."):
-                    f.write(f'**下载链接**：[{url}]({url})  \n')
-            f.write('\n')
-
-
-def save_json():
-    with open('data.json', 'w') as f:
-        json.dump(results, f, indent=4)
-
-
-def main() -> None:
-    load_json()
-    fetch()
-    save_md()
-    save_json()
-
-
-main()
