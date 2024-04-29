@@ -161,16 +161,12 @@ def fetchandsavejson():
                     
             if "stable" in k:
                 data['label'] = "Stable 稳定版"
-                #results['data']['win_x86'][k].update({'label': 'Stable 稳定版'})
             elif "beta" in k:
                 data['label'] = "Beta 测试版"
-                #results['data']['win_x86'][k].update({'label': 'Beta 测试版'})
             elif "dev" in k:
                 data['label'] = "Dev 开发版"
-                #results['data']['win_x86'][k].update({'label': 'Dev 开发版'})
             elif "nightly" in k:
                 data['label'] = "Nightly 每夜版"
-                #results['data']['win_x86'][k].update({'label': 'Canary 金丝雀版'})
             #print("res:",res)
             #print("data2:",data)
             #print("results:",results)
