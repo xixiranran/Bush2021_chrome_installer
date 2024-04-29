@@ -33,14 +33,14 @@ jobs:
     #       echo "exe_exists=false" >> $GITHUB_ENV
     #     fi
 
-    # - name: Commit Files
-    #   env:
-    #     TZ: America/New_York
-    #   run: |
-    #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    #     git config --local user.name "github-actions[bot]"
-    #     git add .
-    #     git commit -m ":pencil: Auto update Chrome at  $(date +"%Y-%m-%d %H:%M")" -a
+    - name: Commit Files
+      env:
+        TZ: America/New_York
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add .
+        git commit -m ":pencil: Auto update Chrome at  $(date +"%Y-%m-%d %H:%M")" -a
 
     - name: Push Changes
       uses: ad-m/github-push-action@v0.8.0
