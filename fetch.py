@@ -192,8 +192,8 @@ def fetchandsavejson():
                 #如果版本有更新则输出更新的data的所有内容，如果版本号没更新就跳出本次循环，这样写是因为版本号请求有时候会变，一会变成新版本，一会又调到老版本了。这样写能保证data.json文件中的版本号是最新的。
                 results['data'][arch].update({k: data})
                 print("updated results['data'][arch][k]['version']:",k,results['data'][arch][k]['version'])
-                # with open('data.json', 'w') as f:
-                #     json.dump(results, f, indent=4)
+                with open('data.json', 'w') as f:
+                    json.dump(results, f, indent=4)
             # else:
             #     continue
                 # data['updatetime'] = results['data']['win_x86'][k]['updatetime']
