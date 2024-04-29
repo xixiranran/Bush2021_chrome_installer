@@ -1,80 +1,80 @@
 {
-    "time": 1714398612163,
+    "time": 1714411248916,
     "data": {
         "win_x86": {
             "stable": {
-                "version": "1.0.0.0",
-                "size": 100528176,
-                "sha1": "d32fdcfbfc948eac5970d1537266069e102f0f57",
-                "sha256": "6d48f0fa48bb370434c4d3ab31ac1916d9bd55c119ec6f38e913fd4bec3b870f",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "124.1.67.49",
+                "size": 113076760,
+                "sha1": "82e88da3d70973d1d02999389b69d54dd6122b36",
+                "sha256": "c9afa063cf3c1f176858663bc422d3b6b73792cce04316a6001649f6c5a6ff27",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x86-ni/win/124.1.67.49/brave_installer-ia32.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
-                "updatetime": 1714073403158
+                "updatetime": 1714411247437
             },
             "beta": {
-                "version": "1.0.0.0",
-                "size": 102046768,
-                "sha1": "e7d1601ddf4f0668413f7782915e13633bca2510",
-                "sha256": "6b77e8ade0715be12083ef89c7a5beb607f666c429b3c336720c06fd43c229ee",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "119.1.61.87",
+                "size": 111640088,
+                "sha1": "c2d966599d2cbfa5ea48657ec0a9dac272a8687f",
+                "sha256": "1af9224406ff10ab9bfbc5711cfecff15cdd44078a369d598c7c942de446a56d",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser/x86-dev/win/119.1.61.87/brave_installer-ia32.exe",
                 "label": "Beta \u6d4b\u8bd5\u7248",
-                "updatetime": 1713982803855
+                "updatetime": 1714411247585
             },
             "dev": {
-                "version": "1.0.0.0",
-                "size": 101769264,
-                "sha1": "e08b89c217e6b894ef9a204f051c9bd19a1395cf",
-                "sha256": "9c07b451095b1ff2734c4ba7fd085c02d7334f4f9af04eb0c25d9c1943c67371",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "124.1.66.90",
+                "size": 112908312,
+                "sha1": "ef2b66ab8538490796997680e162175cb11fc48d",
+                "sha256": "a04fe4e36fb8db2f45b1c42607cab6b552703b82b101916c09295a1964e09630",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Beta/x86-be/win/124.1.66.90/brave_installer-ia32.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714151404877
+                "updatetime": 1714411247713
             },
             "nightly": {
-                "version": "1.0.0.0",
-                "size": 129165872,
-                "sha1": "fc74f6946e4fbc17a84b2a9cb242b041fa0879cb",
-                "sha256": "d9af3f29d3c3f45b74748d90f757d1c38aaf0d91c59a3da225b15933e4c39fb4",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
-                "label": "Canary \u91d1\u4e1d\u96c0\u7248",
-                "updatetime": 1714392607606
+                "version": "124.1.65.123",
+                "size": 112970264,
+                "sha1": "596f3bf8f295c523add5eff468b948ecb03409c5",
+                "sha256": "5fdb56e99455f34867f9071161d1b0be1d80cb3bd2087699e4df9a08343cf6b1",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Release/x86-rel/win/124.1.65.123/brave_installer-ia32.exe",
+                "label": "Nightly \u6bcf\u591c\u7248",
+                "updatetime": 1714411248015
             }
         },
         "win_x64": {
             "stable": {
-                "version": "1.0.0.0",
-                "size": 112080944,
-                "sha1": "2cbeddf8064acee4d3c523b7259e56785a210d64",
-                "sha256": "92a78af5a1083307ff0f6f9629c1d9fe13d6296e074fd314881d7f8d24ed5f93",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "124.1.67.49",
+                "size": 124564504,
+                "sha1": "e0e1e710ed4616199afea22c034e9e9567c20dda",
+                "sha256": "7121c87fdbf000da44d1a2abc9986b5d6a5f909d408a62352e5eb6561eb97058",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x64-ni/win/124.1.67.49/brave_installer-x64.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
-                "updatetime": 1714073407734
+                "updatetime": 1714411248342
             },
             "beta": {
-                "version": "1.0.0.0",
-                "size": 113072688,
-                "sha1": "4200739106cff4e160793a783f9b60ead1a40115",
-                "sha256": "06b0c87af66e67f61a5e56ee051c551cba5d8687e4eec2102198ecd3656132eb",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "119.1.61.87",
+                "size": 123560472,
+                "sha1": "df0db94a2726c7e195e3865ba6b66b01f33cdbcd",
+                "sha256": "eb42858b83fc416e8a41ff151a58d5f48bb6cfd88564fa4930ebcf2e149ed878",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser/x64-dev/win/119.1.61.87/brave_installer-x64.exe",
                 "label": "Beta \u6d4b\u8bd5\u7248",
-                "updatetime": 1713982808441
+                "updatetime": 1714411248659
             },
             "dev": {
-                "version": "1.0.0.0",
-                "size": 113370160,
-                "sha1": "4be1605e620fdd8d113b0517fc8b0599d8c9e625",
-                "sha256": "2cf3b665a605d94422d1f989250c1d1f2180a5d558a3e9cedb0dc9f301f946e8",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
+                "version": "124.1.66.90",
+                "size": 124444184,
+                "sha1": "bb69711a848c3869512cc9406ddd282132e727ab",
+                "sha256": "a1288601811bf367846be8d0bf11ca9b5f4822fb1d179c074953bcd3d5e92bf1",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Beta/x64-be/win/124.1.66.90/brave_installer-x64.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714151408779
+                "updatetime": 1714411248784
             },
             "nightly": {
-                "version": "1.0.0.0",
-                "size": 148585008,
-                "sha1": "7d046667cc26659f12cb921d1f83339ef7c945de",
-                "sha256": "017602927477f2fae4ee5b745a8e6dde59310ab2fe44fa607f1f68cdcdf871f4",
-                "url": "https://www.google.com/dl/release2/chrome/i6zzubut5tloltdyekwk3actoi_125.0.6422.14/125.0.6422.14_chrome_installer.exe",
-                "label": "Canary \u91d1\u4e1d\u96c0\u7248",
-                "updatetime": 1714380310041
+                "version": "124.1.65.123",
+                "size": 124532248,
+                "sha1": "89e2aca36da5528e52f4b364acbbf45ef59d6496",
+                "sha256": "eecfa4f9a2552e3632152cd109aacac2ce719f3d641b32934049dbf389725cf9",
+                "url": "https://updates-cdn.bravesoftware.com/build/Brave-Release/x64-rel/win/124.1.65.123/brave_installer-x64.exe",
+                "label": "Nightly \u6bcf\u591c\u7248",
+                "updatetime": 1714411248916
             }
         }
     }
