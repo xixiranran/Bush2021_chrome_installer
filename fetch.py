@@ -74,11 +74,11 @@ def post(bid: str, appid: str, apVersion: str) -> str:
     
     r = session.post(update_url, data=xml)
     # r = session.post(update_url, data=xml, headers=headers, verify=False)
-    print("Request Headers:", r.request.headers)
-    print("Request Body:", r.request.body)
-    print("Response Status Code:", r.status_code)
-    print("Response Headers:", r.headers)
-    print("Response Body:", r.text)
+    # print("Request Headers:", r.request.headers)
+    # print("Request Body:", r.request.body)
+    # print("Response Status Code:", r.status_code)
+    # print("Response Headers:", r.headers)
+    # print("Response Body:", r.text)
     return r.text
 
 def decode(text):
@@ -92,6 +92,7 @@ def decode(text):
         # return None 或者 re-raise 异常等
         return None
     manifest_node = root.find('.//manifest')
+    print(manifest_node)
     if manifest_node is None:
         print("Error: manifest_node is None")
         return
