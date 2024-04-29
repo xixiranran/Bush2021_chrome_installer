@@ -3,7 +3,7 @@
     "data": {
         "win_x86": {
             "stable": {
-                "version": "124.0.6367.92",
+                "version": "1.0.0.0",
                 "size": 100528176,
                 "sha1": "d32fdcfbfc948eac5970d1537266069e102f0f57",
                 "sha256": "6d48f0fa48bb370434c4d3ab31ac1916d9bd55c119ec6f38e913fd4bec3b870f",
@@ -12,7 +12,7 @@
                 "updatetime": 1714073403158
             },
             "beta": {
-                "version": "125.0.6422.14",
+                "version": "1.0.0.0",
                 "size": 102046768,
                 "sha1": "e7d1601ddf4f0668413f7782915e13633bca2510",
                 "sha256": "6b77e8ade0715be12083ef89c7a5beb607f666c429b3c336720c06fd43c229ee",
@@ -21,7 +21,7 @@
                 "updatetime": 1713982803855
             },
             "dev": {
-                "version": "126.0.6439.0",
+                "version": "1.0.0.0",
                 "size": 101769264,
                 "sha1": "e08b89c217e6b894ef9a204f051c9bd19a1395cf",
                 "sha256": "9c07b451095b1ff2734c4ba7fd085c02d7334f4f9af04eb0c25d9c1943c67371",
@@ -30,7 +30,7 @@
                 "updatetime": 1714151404877
             },
             "nightly": {
-                "version": "126.0.6447.1",
+                "version": "1.0.0.0",
                 "size": 129165872,
                 "sha1": "fc74f6946e4fbc17a84b2a9cb242b041fa0879cb",
                 "sha256": "d9af3f29d3c3f45b74748d90f757d1c38aaf0d91c59a3da225b15933e4c39fb4",
@@ -41,7 +41,7 @@
         },
         "win_x64": {
             "stable": {
-                "version": "124.0.6367.92",
+                "version": "1.0.0.0",
                 "size": 112080944,
                 "sha1": "2cbeddf8064acee4d3c523b7259e56785a210d64",
                 "sha256": "92a78af5a1083307ff0f6f9629c1d9fe13d6296e074fd314881d7f8d24ed5f93",
@@ -50,7 +50,7 @@
                 "updatetime": 1714073407734
             },
             "beta": {
-                "version": "125.0.6422.14",
+                "version": "1.0.0.0",
                 "size": 113072688,
                 "sha1": "4200739106cff4e160793a783f9b60ead1a40115",
                 "sha256": "06b0c87af66e67f61a5e56ee051c551cba5d8687e4eec2102198ecd3656132eb",
@@ -59,7 +59,7 @@
                 "updatetime": 1713982808441
             },
             "dev": {
-                "version": "126.0.6439.0",
+                "version": "1.0.0.0",
                 "size": 113370160,
                 "sha1": "4be1605e620fdd8d113b0517fc8b0599d8c9e625",
                 "sha256": "2cf3b665a605d94422d1f989250c1d1f2180a5d558a3e9cedb0dc9f301f946e8",
@@ -68,7 +68,7 @@
                 "updatetime": 1714151408779
             },
             "nightly": {
-                "version": "126.0.6447.1",
+                "version": "1.0.0.0",
                 "size": 148585008,
                 "sha1": "7d046667cc26659f12cb921d1f83339ef7c945de",
                 "sha256": "017602927477f2fae4ee5b745a8e6dde59310ab2fe44fa607f1f68cdcdf871f4",
