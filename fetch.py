@@ -92,7 +92,6 @@ def decode(text):
         # return None 或者 re-raise 异常等
         return None
     manifest_node = root.find('.//manifest')
-    print(manifest_node)
     if manifest_node is None:
         print("Error: manifest_node is None")
         return
@@ -111,6 +110,13 @@ def decode(text):
 
     url_nodes = root.findall('.//url')
     url = url_nodes[0].get('codebase') + package_name
+    print("package_name:",package_name)
+    print("package_size:",package_size)
+    print("package_sha1:",package_sha1)
+    print("package_sha256:",package_sha256)
+    print("url:",url)
+
+    
     # url_prefixes = []
     # for node in url_nodes:
     #     url_prefixes.append(node.get('codebase') + package_name)
