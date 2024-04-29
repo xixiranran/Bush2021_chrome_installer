@@ -42,11 +42,11 @@ jobs:
     #     git add .
     #     git commit -m ":pencil: Auto update Chrome at  $(date +"%Y-%m-%d %H:%M")" -a
 
-    # - name: Push Changes
-    #   uses: ad-m/github-push-action@v0.8.0
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     branch: ${{ github.ref }}
+    - name: Push Changes
+      uses: ad-m/github-push-action@v0.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
 
     # - name: Upload Release
     #   if: env.exe_exists == 'true'
