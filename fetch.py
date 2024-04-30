@@ -163,7 +163,7 @@ def fetch():
                 results['data'][arch][k]['label'] = "Nightly每夜版"
 
             # 获取最后修改时间
-            last_modified = get_last_modified(response_headers)
+            last_modified = get_last_modified(res.headers)
             
             # 打印最后修改时间
             results['data'][arch][k]['updatetime'] = last_modified
