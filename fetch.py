@@ -58,24 +58,29 @@ results = {}
 # 解析响应头中的哈希值
 def get_hashes(headers):
     hashes = {}
-    # 正则表达式匹配crc32c和md5哈希值
-    for part in headers['X-Goog-Hash'].split(','):
-        hash_type, hash_value_encrypted = part.split('=', 1)  # 确保只分割一次
-
-        # 计算需要添加的等号数量以使长度成为4的倍数
-        padding = '=' * ((4 - len(hash_value_encrypted) % 4) % 4)
+    # 按照逗号分割不同的哈希值对
+    hash_pairs = headers['X-Goog-Hash'].split(', ')
+    
+    for pair in hash_pairs:
+        # 分离哈希类型和哈希值
+        hash_type, hash_value_encrypted = pair.split('=', 1)
         
-        # 尝试Base64解码哈希值
+        # 添加必要数量的等号以构成Base64编码的完整四字节块
+        padding = '=' * ((4 - len(hash_value_encrypted) % 4) % 4)
+        hash_value_encrypted += padding
+        
         try:
-            hash_value_bytes = base64.b64decode(hash_value_encrypted + padding)
+            # Base64解码
+            hash_value_bytes = base64.b64decode(hash_value_encrypted)
+            # 将字节数据转换为十六进制字符串
+            hash_value = hash_value_bytes.hex()
         except binascii.Error as e:
             print(f"Base64解码错误：{e}")
             continue  # 如果解码出错，跳过当前哈希值
-
-        # 将字节数据转换为十六进制表示的字符串
-        hash_value = hash_value_bytes.hex()
-
+        
+        # 存储哈希类型和哈希值
         hashes[hash_type] = hash_value
+    
     return hashes
 
 def fetch():
@@ -116,11 +121,11 @@ def fetch():
             
             # 从响应头中获取文件大小（字节）
             file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
-            file_size_bytes = int(file_size_bytes_str)
+            # file_size_bytes = int(file_size_bytes_str)
             
             # 使用humansize函数获取用户友好的文件大小
-            file_size_human = humansize(file_size_bytes)
-            results['data'][arch][k]['size'] = file_size_human
+            # file_size_human = humansize(file_size_bytes)
+            results['data'][arch][k]['size'] = file_size_bytes_str
             # print(f"文件大小: {file_size_human}")
 
             # 获取哈希值
