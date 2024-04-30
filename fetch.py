@@ -102,7 +102,7 @@ def fetch():
                     continue
             #获取下载链接
             # print("res.download_url:",res.url)
-            results['arch']['k']['url'] = res.url
+            results[arch][k]['url'] = res.url
             
             # 从响应头中获取文件大小（字节）
             file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
@@ -110,7 +110,7 @@ def fetch():
             
             # 使用humansize函数获取用户友好的文件大小
             file_size_human = humansize(file_size_bytes)
-            results['arch']['k']['size'] = file_size_human
+            results[arch][k]['size'] = file_size_human
             # print(f"文件大小: {file_size_human}")
 
             # 获取哈希值
@@ -121,15 +121,15 @@ def fetch():
             print(f"MD5 Hash: {hashes.get('md5')}")
             
             if "release" in k:
-                results['arch']['k']['label'] = "Release稳定版"
+                results[arch][k]['label'] = "Release稳定版"
             if "esr" in k:
-                results['arch']['k']['label'] = "Esr稳定版"
+                results[arch][k]['label'] = "Esr稳定版"
             elif "beta" in k:
-                results['arch']['k']['label'] = "Beta测试版"
+                results[arch][k]['label'] = "Beta测试版"
             elif "devedition" in k:
-                results['arch']['k']['label'] = "Dev开发版"
+                results[arch][k]['label'] = "Dev开发版"
             elif "nightly" in k:
-                results['arch']['k']['label'] = "Nightly每夜版"
+                results[arch][k]['label'] = "Nightly每夜版"
     #获取最新时间并更新到data.json的time字典中
     results.update({'time': int(datetime.now().timestamp() * 1000)})
     with open('data.json', 'w') as f:
