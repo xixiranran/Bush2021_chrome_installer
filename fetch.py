@@ -9,46 +9,46 @@ import time
 info = {
     "win_x86": {
         "release": {
-            "product": '''"firefox-latest"''',
-            "arch": '''"win"''',
+            "product": 'firefox-latest',
+            "arch": 'win',
         },
         "esr": {
-            "product": '''"firefox-esr-latest"''',
-            "arch": '''"win"''',
+            "product": 'firefox-esr-latest',
+            "arch": 'win',
         },
         "beta": {
-            "product": '''"firefox-beta-latest"''',
-            "arch": '''"win"''',
+            "product": 'firefox-beta-latest',
+            "arch": 'win',
         },
         "dev": {
-            "product": '''"firefox-devedition-latest"''',
-            "arch": '''"win"''',
+            "product": 'firefox-devedition-latest',
+            "arch": 'win',
         },
         "nightly": {
-            "product": '''"firefox-nightly-latest"''',
-            "arch": '''"win"''',
+            "product": 'firefox-nightly-latest',
+            "arch": 'win',
         }
     },
     "win_x64": {
         "release": {
-            "product": '''"firefox-latest"''',
-            "arch": '''"win64"''',
+            "product": 'firefox-latest',
+            "arch": 'win64',
         },
         "esr": {
-            "product": '''"firefox-esr-latest"''',
-            "arch": '''"win64"''',
+            "product": 'firefox-esr-latest',
+            "arch": 'win64',
         },
         "beta": {
-            "product": '''"firefox-beta-latest"''',
-            "arch": '''"win64"''',
+            "product": 'firefox-beta-latest',
+            "arch": 'win64',
         },
         "dev": {
-            "product": '''"firefox-devedition-latest"''',
-            "arch": '''"win64"''',
+            "product": 'firefox-devedition-latest',
+            "arch": 'win64',
         },
         "nightly": {
-            "product": '''"firefox-nightly-latest"''',
-            "arch": '''"win64"''',
+            "product": 'firefox-nightly-latest',
+            "arch": 'win64',
         }
     }
 }
