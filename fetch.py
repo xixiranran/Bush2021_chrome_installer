@@ -127,7 +127,7 @@ def fetch():
             last_modified_date13 = int(last_modified_date.timestamp() * 1000)
 
             #如果firefox文件最后更新时间变了，就更新版本信息，反之则跳出当前循环
-            if last_modified_date13 != results['data'][arch][k]['updatetime']
+            if last_modified_date13 != results['data'][arch][k]['updatetime']:
                 # 获取最后修改时间
                 last_modified = get_last_modified(res.headers)
                 
