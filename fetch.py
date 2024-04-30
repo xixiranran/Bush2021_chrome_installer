@@ -58,15 +58,19 @@ results = {}
 # 解析响应头中的哈希值
 def get_hashes(headers):
     hashes = {}
-    # 按逗号分割不同的哈希值
+    # 按逗号分割不同的哈希值对
     hash_parts = headers['X-Goog-Hash'].split(',')
     for part in hash_parts:
-        # 分离哈希类型和哈希值
-        hash_type, hash_value_encrypted = part.split('=')
+        # 分离哈希类型和Base64编码的哈希值
+        hash_type = part.split('=')[0]  # 只取第一个部分作为哈希类型
+        hash_value_encrypted = part.split('=')[1]  # 剩余的部分是Base64编码的哈希值
+        
         # Base64解码哈希值
         hash_value_bytes = base64.b64decode(hash_value_encrypted)
+        
         # 将字节数据转换为十六进制表示的字符串
         hash_value = hash_value_bytes.hex()
+        
         hashes[hash_type] = hash_value
     return hashes
 
