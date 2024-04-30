@@ -82,20 +82,17 @@ def get_hashes(headers):
         hashes[hash_type] = hash_value
     
     return hashes
-
-                
-# 解析Last-Modified响应头中的日期和时间
+            
+# 解析Last-Modified响应头中的日期和时间，但忽略任何偏移量
 def get_last_modified(headers):
     # 提取日期和时间字符串
     date_str = headers['last-modified'].split(';')[0]  # 只取日期和时间部分
     
     # 解析日期和时间字符串
     last_modified_date = datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S %Z')
-    
-    # 将时间转换为微秒时间戳
-    timestamp_micros = int(last_modified_date.timestamp() * 1e6)
 
-    return timestamp_micros
+    # 将时间转换为13位毫秒时间戳
+    return int(last_modified_date.timestamp() * 1000)
                 
 def fetch():
     global results
