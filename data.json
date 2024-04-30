@@ -5,12 +5,11 @@
             "release": {
                 "version": "124.1.67.49",
                 "size": "58.23 MB",
-                "crc32cc": "82e88da3d70973d1d02999389b69d54dd6122b36",
+                "crc32c": "82e88da3d70973d1d02999389b69d54dd6122b36",
                 "md5": null,
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win32/zh-CN/Firefox%20Setup%20125.0.3.exe",
                 "label": "Release\u7a33\u5b9a\u7248",
-                "updatetime": 1714411247437,
-                "crc32c": "253a2afb"
+                "updatetime": 1714411247437
             },
             "esr": {
                 "version": "124.1.67.49",
