@@ -8,78 +8,50 @@ import time
 
 info = {
     "win_x86": {
-        "stable": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{AFE6A462-C574-4B8A-AF43-4CC60DF4563B}"''',
-            "apVersion": '''"x86-ni"''',
+        "release": {
+            "appid": '''"firefox-latest"''',
+            "apVersion": '''"win"''',
+        },
+        "esr": {
+            "appid": '''"firefox-esr-latest"''',
+            "apVersion": '''"win"''',
         },
         "beta": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{103BD053-949B-43A8-9120-2E424887DE11}"''',
-            "apVersion": '''"x86-dev"''',
+            "appid": '''"firefox-beta-latest"''',
+            "apVersion": '''"win"''',
         },
-        "dev": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{CB2150F2-595F-4633-891A-E39720CE0531}"''',
-            "apVersion": '''"x86-be"''',
+        "devedition": {
+            "appid": '''"firefox-devedition-latest"''',
+            "apVersion": '''"win"''',
         },
         "nightly": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{C6CB981E-DB30-4876-8639-109F8933582C}"''',
-            "apVersion": '''"x86-rel"''',
+            "appid": '''"firefox-nightly-latest"''',
+            "apVersion": '''"win"''',
         }
     },
     "win_x64": {
-        "stable": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{AFE6A462-C574-4B8A-AF43-4CC60DF4563B}"''',
-            "apVersion": '''"x64-ni"''',
+        "release": {
+            "appid": '''"firefox-latest"''',
+            "apVersion": '''"win64"''',
+        },
+        "esr": {
+            "appid": '''"firefox-esr-latest"''',
+            "apVersion": '''"win64"''',
         },
         "beta": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{103BD053-949B-43A8-9120-2E424887DE11}"''',
-            "apVersion": '''"x64-dev"''',
+            "appid": '''"firefox-beta-latest"''',
+            "apVersion": '''"win64"''',
         },
-        "dev": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{CB2150F2-595F-4633-891A-E39720CE0531}"''',
-            "apVersion": '''"x64-be"''',
+        "devedition": {
+            "appid": '''"firefox-devedition-latest"''',
+            "apVersion": '''"win64"''',
         },
         "nightly": {
-            'bid': '''"{11111111-1111-1111-1111-111111111111}"''',
-            "appid": '''"{C6CB981E-DB30-4876-8639-109F8933582C}"''',
-            "apVersion": '''"x64-rel"''',
+            "appid": '''"firefox-nightly-latest"''',
+            "apVersion": '''"win64"''',
         }
     }
 }
-
-update_url = 'https://updates.bravesoftware.com/service/update2'
-
-session = requests.Session()
-
-
-def post(bid: str, appid: str, apVersion: str) -> str:
-    xml = f'''<?xml version="1.0" encoding="UTF-8"?>
-    <request protocol="3.0" version="1.3.99.0" shell_version="1.3.99.0" ismachine="1" sessionid={bid} installsource="taggedmi" testsource="auto" requestid={bid} dedup="cr">
-    <os platform="win" version="" sp="" arch="x86"/>
-    <app appid={appid} version="" nextversion="" ap={apVersion} lang="en" brand="" client="" installage="-1" installdate="-1">
-    <updatecheck/>
-    </app>
-    </request>'''
-    
-    # headers = {
-    #     'Content-Type': 'application/x-www-form-urlencoded',
-    #     'User-Agent': 'Google Update/1.3.101.0;winhttp'
-    # }
-    
-    r = session.post(update_url, data=xml)
-    # r = session.post(update_url, data=xml, headers=headers, verify=False)
-    # print("Request Headers:", r.request.headers)
-    # print("Request Body:", r.request.body)
-    # print("Response Status Code:", r.status_code)
-    # print("Response Headers:", r.headers)
-    # print("Response Body:", r.text)
-    return r.text
 
 def decode(text):
     try:
@@ -149,15 +121,24 @@ def fetchandsavejson():
     #请求服务器获取数据并更新到data.json的win_x86字典中
     for arch in ['win_x86', 'win_x64']:
         for k, v in info[arch].items():
-            #print("k:",k)     #stable
-            print("v:",v)
-            # print("v:",v)     #{'os': 'platform="win" version="10.0" sp="" arch="x86"', 'app': 'appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" version="" nextversion="" lang="en" brand=""  installage="-1" installdate="-1" iid="{11111111-1111-1111-1111-111111111111}"'}
-            #print("info['win_x86']:",info['win_x86'])
-            #print("info['win_x86'].items():",info['win_x86'].items())
-            #下面while true是为了解决post偶尔抽风得到的数据为none时，解决AttributeError: 'NoneType'对象没有'get'属性的问题
-            # 设置一个循环，当响应不为None时停止
             while True:
-                # 发送POST请求
+                url = f"https://download.mozilla.org/?product={k}&os={v}&lang=zh-CN"
+                response = requests.get(url)
+                print("response:",response)
+                if response.status_code == 200:
+                    data = response.json()
+                    version_info = {
+                        'version': data['version'],
+                        'url': data['download_url']
+                    }
+                    # 检查版本号是否有更新
+                    if current_versions[arch].get(version_name) != version_info['version']:
+                        print(f"检测到更新: {version_name} {arch}")
+                        current_versions[arch][version_name] = version_info['version']
+                        download_links[arch][version_name] = version_info['url']
+                    else:
+                        print(f"当前版本已是最新: {version_name} {arch}")
+
                 res = post(**v)
                 data = decode(res)
                 if data is None:
@@ -166,14 +147,16 @@ def fetchandsavejson():
                 else:
                     break
                     
-            if "stable" in k:
-                data['label'] = "Stable 稳定版"
+            if "release" in k:
+                data['label'] = "Release稳定版"
+            if "esr" in k:
+                data['label'] = "Esr稳定版"
             elif "beta" in k:
-                data['label'] = "Beta 测试版"
-            elif "dev" in k:
-                data['label'] = "Dev 开发版"
+                data['label'] = "Beta测试版"
+            elif "devedition" in k:
+                data['label'] = "Dev开发版"
             elif "nightly" in k:
-                data['label'] = "Nightly 每夜版"
+                data['label'] = "Nightly每夜版"
             #print("res:",res)
             #print("data2:",data)
             #print("results:",results)
