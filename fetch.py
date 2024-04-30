@@ -122,7 +122,7 @@ def fetch():
     for arch in ['win_x86', 'win_x64']:
         for k, v in info[arch].items():
             while True:
-                url = f"https://download.mozilla.org/?product={k}&os={v}&lang=zh-CN"
+                url = f"https://download.mozilla.org/?product={v['product']}&os={v['arch']}&lang=zh-CN"
                 print("url:",url)
                 res = requests.get(url,allow_redirects=True)
                 print("res:",res)
