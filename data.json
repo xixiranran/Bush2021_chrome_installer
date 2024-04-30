@@ -5,7 +5,7 @@
             "release": {
                 "version": "124.1.67.49",
                 "size": 113076760,
-                "crc32": "82e88da3d70973d1d02999389b69d54dd6122b36",
+                "crc32cc": "82e88da3d70973d1d02999389b69d54dd6122b36",
                 "md5": "c9afa063cf3c1f176858663bc422d3b6b73792cce04316a6001649f6c5a6ff27",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x86-ni/win/124.1.67.49/brave_installer-ia32.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
@@ -14,7 +14,7 @@
             "esr": {
                 "version": "124.1.67.49",
                 "size": 113076760,
-                "crc32": "82e88da3d70973d1d02999389b69d54dd6122b36",
+                "crc32c": "82e88da3d70973d1d02999389b69d54dd6122b36",
                 "md5": "c9afa063cf3c1f176858663bc422d3b6b73792cce04316a6001649f6c5a6ff27",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x86-ni/win/124.1.67.49/brave_installer-ia32.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
@@ -23,7 +23,7 @@
             "beta": {
                 "version": "119.1.61.87",
                 "size": 111640088,
-                "crc32": "c2d966599d2cbfa5ea48657ec0a9dac272a8687f",
+                "crc32c": "c2d966599d2cbfa5ea48657ec0a9dac272a8687f",
                 "md5": "1af9224406ff10ab9bfbc5711cfecff15cdd44078a369d598c7c942de446a56d",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser/x86-dev/win/119.1.61.87/brave_installer-ia32.exe",
                 "label": "Beta \u6d4b\u8bd5\u7248",
@@ -32,7 +32,7 @@
             "dev": {
                 "version": "124.1.66.90",
                 "size": 112908312,
-                "crc32": "ef2b66ab8538490796997680e162175cb11fc48d",
+                "crc32c": "ef2b66ab8538490796997680e162175cb11fc48d",
                 "md5": "a04fe4e36fb8db2f45b1c42607cab6b552703b82b101916c09295a1964e09630",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Beta/x86-be/win/124.1.66.90/brave_installer-ia32.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
@@ -41,7 +41,7 @@
             "nightly": {
                 "version": "124.1.65.123",
                 "size": 112970264,
-                "crc32": "596f3bf8f295c523add5eff468b948ecb03409c5",
+                "crc32c": "596f3bf8f295c523add5eff468b948ecb03409c5",
                 "md5": "5fdb56e99455f34867f9071161d1b0be1d80cb3bd2087699e4df9a08343cf6b1",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Release/x86-rel/win/124.1.65.123/brave_installer-ia32.exe",
                 "label": "Nightly \u6bcf\u591c\u7248",
@@ -52,7 +52,7 @@
             "release": {
                 "version": "124.1.67.49",
                 "size": 124564504,
-                "crc32": "e0e1e710ed4616199afea22c034e9e9567c20dda",
+                "crc32c": "e0e1e710ed4616199afea22c034e9e9567c20dda",
                 "md5": "7121c87fdbf000da44d1a2abc9986b5d6a5f909d408a62352e5eb6561eb97058",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x64-ni/win/124.1.67.49/brave_installer-x64.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
@@ -61,7 +61,7 @@
             "esr": {
                 "version": "124.1.67.49",
                 "size": 124564504,
-                "crc32": "e0e1e710ed4616199afea22c034e9e9567c20dda",
+                "crc32c": "e0e1e710ed4616199afea22c034e9e9567c20dda",
                 "md5": "7121c87fdbf000da44d1a2abc9986b5d6a5f909d408a62352e5eb6561eb97058",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Nightly/x64-ni/win/124.1.67.49/brave_installer-x64.exe",
                 "label": "Stable \u7a33\u5b9a\u7248",
@@ -70,7 +70,7 @@
             "beta": {
                 "version": "119.1.61.87",
                 "size": 123560472,
-                "crc32": "df0db94a2726c7e195e3865ba6b66b01f33cdbcd",
+                "crc32c": "df0db94a2726c7e195e3865ba6b66b01f33cdbcd",
                 "md5": "eb42858b83fc416e8a41ff151a58d5f48bb6cfd88564fa4930ebcf2e149ed878",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser/x64-dev/win/119.1.61.87/brave_installer-x64.exe",
                 "label": "Beta \u6d4b\u8bd5\u7248",
@@ -79,7 +79,7 @@
             "dev": {
                 "version": "124.1.66.90",
                 "size": 124444184,
-                "crc32": "bb69711a848c3869512cc9406ddd282132e727ab",
+                "crc32c": "bb69711a848c3869512cc9406ddd282132e727ab",
                 "md5": "a1288601811bf367846be8d0bf11ca9b5f4822fb1d179c074953bcd3d5e92bf1",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Browser-Beta/x64-be/win/124.1.66.90/brave_installer-x64.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
@@ -88,7 +88,7 @@
             "nightly": {
                 "version": "124.1.65.123",
                 "size": 124532248,
-                "crc32": "89e2aca36da5528e52f4b364acbbf45ef59d6496",
+                "crc32c": "89e2aca36da5528e52f4b364acbbf45ef59d6496",
                 "md5": "eecfa4f9a2552e3632152cd109aacac2ce719f3d641b32934049dbf389725cf9",
                 "url": "https://updates-cdn.bravesoftware.com/build/Brave-Release/x64-rel/win/124.1.65.123/brave_installer-x64.exe",
                 "label": "Nightly \u6bcf\u591c\u7248",
