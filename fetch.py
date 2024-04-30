@@ -117,8 +117,10 @@ def fetch():
             hashes = get_hashes(res.headers)
             
             # 打印结果
-            print(f"CRC32C Hash: {hashes.get('crc32c')}")
-            print(f"MD5 Hash: {hashes.get('md5')}")
+            results['data'][arch][k]['crc32c'] = hashes.get('crc32c')
+            results['data'][arch][k]['md5'] = hashes.get('md5')
+            # print(f"CRC32C Hash: {hashes.get('crc32c')}")
+            # print(f"MD5 Hash: {hashes.get('md5')}")
             
             if "release" in k:
                 results['data'][arch][k]['label'] = "Release稳定版"
