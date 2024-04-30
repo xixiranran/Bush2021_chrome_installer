@@ -128,12 +128,9 @@ def fetch():
 
             #如果firefox文件最后更新时间变了，就更新版本信息，反之则跳出当前循环
             if last_modified_date13 != results['data'][arch][k]['updatetime']:
-                # 获取最后修改时间
-                last_modified = get_last_modified(res.headers)
-                
                 # 更新和打印最后修改时间
-                results['data'][arch][k]['updatetime'] = last_modified
-                print(f"文件最后更新时间:", last_modified)
+                results['data'][arch][k]['updatetime'] = last_modified_date13
+                print(f"文件最后更新时间:", last_modified_date13)
 
                 #获取下载链接
                 # print("res.download_url:",res.url)
@@ -158,7 +155,7 @@ def fetch():
                 # print(f"MD5 Hash: {hashes.get('md5')}")
                 
                 if "release" in k:
-                    results['data'][arch][k]['label'] = "Release稳定版"
+                    results['data'][arch][k]['label'] = "Release发行版"
                 if "esr" in k:
                     results['data'][arch][k]['label'] = "Esr稳定版"
                 elif "beta" in k:
