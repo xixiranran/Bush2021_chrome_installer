@@ -20,7 +20,7 @@ info = {
             "appid": '''"firefox-beta-latest"''',
             "apVersion": '''"win"''',
         },
-        "devedition": {
+        "dev": {
             "appid": '''"firefox-devedition-latest"''',
             "apVersion": '''"win"''',
         },
@@ -42,7 +42,7 @@ info = {
             "appid": '''"firefox-beta-latest"''',
             "apVersion": '''"win64"''',
         },
-        "devedition": {
+        "dev": {
             "appid": '''"firefox-devedition-latest"''',
             "apVersion": '''"win64"''',
         },
