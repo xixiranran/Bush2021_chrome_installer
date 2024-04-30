@@ -123,8 +123,9 @@ def fetch():
         for k, v in info[arch].items():
             while True:
                 url = f"https://download.mozilla.org/?product={k}&os={v}&lang=zh-CN"
+                print("url:",url)
                 res = requests.get(url,allow_redirects=True)
-                print("response:",res)
+                print("res:",res)
                 if res.status_code == 200:
                     # 检查是否成功获取到下载链接
                     if 'Location' in res.headers:
