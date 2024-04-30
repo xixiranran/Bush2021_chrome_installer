@@ -1,5 +1,5 @@
 {
-    "time": 1714496367548,
+    "time": 1714496919836,
     "data": {
         "win_x86": {
             "release": {
@@ -9,7 +9,7 @@
                 "md5": "1661eb691664c3436fd06412758265b4",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win32/zh-CN/Firefox%20Setup%20125.0.3.exe",
                 "label": "Release\u7a33\u5b9a\u7248",
-                "updatetime": 1714411247437
+                "updatetime": 1714395240000000
             },
             "esr": {
                 "version": "124.1.67.49",
@@ -18,7 +18,7 @@
                 "md5": "bbbc398a1e3238d51ee388c55a2e4db9",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/115.10.0esr/win32/zh-CN/Firefox%20Setup%20115.10.0esr.exe",
                 "label": "Esr\u7a33\u5b9a\u7248",
-                "updatetime": 1714411247437
+                "updatetime": 1713186597000000
             },
             "beta": {
                 "version": "119.1.61.87",
@@ -27,7 +27,7 @@
                 "md5": "8cb0a94f474967b4bab84e693de056d0",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b7/win32/zh-CN/Firefox%20Setup%20126.0b7.exe",
                 "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714411247585
+                "updatetime": 1714406186000000
             },
             "dev": {
                 "version": "124.1.66.90",
@@ -36,7 +36,7 @@
                 "md5": "469e371aa05cef8f8b26ddfa60b554ec",
                 "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b7/win32/zh-CN/Firefox%20Setup%20126.0b7.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714411247713
+                "updatetime": 1714408080000000
             },
             "nightly": {
                 "version": "124.1.65.123",
@@ -45,7 +45,7 @@
                 "md5": "9ad741e46611844bb3ef584895f8f4c3",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win32.installer.exe",
                 "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1714411248015
+                "updatetime": 1714482464000000
             }
         },
         "win_x64": {
@@ -56,7 +56,7 @@
                 "md5": "b0055edc1c007cf482806c17f50b8437",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win64/zh-CN/Firefox%20Setup%20125.0.3.exe",
                 "label": "Release\u7a33\u5b9a\u7248",
-                "updatetime": 1714411248342
+                "updatetime": 1714395343000000
             },
             "esr": {
                 "version": "124.1.67.49",
@@ -65,7 +65,7 @@
                 "md5": "838db20ccc4e9590dfb54972a42c18ec",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/115.10.0esr/win64/zh-CN/Firefox%20Setup%20115.10.0esr.exe",
                 "label": "Esr\u7a33\u5b9a\u7248",
-                "updatetime": 1714411248342
+                "updatetime": 1713186657000000
             },
             "beta": {
                 "version": "119.1.61.87",
@@ -74,7 +74,7 @@
                 "md5": "df26d13aea21fb4111322ebec18a9ea4",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b7/win64/zh-CN/Firefox%20Setup%20126.0b7.exe",
                 "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714411248659
+                "updatetime": 1714406253000000
             },
             "dev": {
                 "version": "124.1.66.90",
@@ -83,7 +83,7 @@
                 "md5": "9646af5f431c1e37cce957f6c0d6a039",
                 "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b7/win64/zh-CN/Firefox%20Setup%20126.0b7.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714411248784
+                "updatetime": 1714408149000000
             },
             "nightly": {
                 "version": "124.1.65.123",
@@ -92,7 +92,7 @@
                 "md5": "9cca527d5e4f4620673369c2f1d268f6",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win64.installer.exe",
                 "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1714411248916
+                "updatetime": 1714482471000000
             }
         }
     }
