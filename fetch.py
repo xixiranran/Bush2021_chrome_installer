@@ -123,43 +123,20 @@ def fetch():
         for k, v in info[arch].items():
             while True:
                 url = f"https://download.mozilla.org/?product={v['product']}&os={v['arch']}&lang=zh-CN"
-                print("url:",url)
+                # print("url:",url)   #https://download.mozilla.org/?product=firefox-latest&os=win&lang=zh-CN
                 res = requests.get(url,allow_redirects=True)
-                print("res:",res)
+                # print("res:",res)   #<Response [200]>
                 if res.status_code == 200:
-                    # print("res.headers:",res.headers)
-                    print("res.download_url:",res.url)
-                    # 检查是否成功获取到下载链接
-                    if 'Location' in res.headers:
-                        download_url = res.headers['Location']
-                        print(f"下载链接: {download_url}")
-                        return download_url
-                    else:
-                        print("未找到下载链接")
-                        return None
-                else:
-                    print(f"请求失败，状态码：{res.status_code}")
-                    return None
-                if res.status_code == 200:
-                    data = res.json()
-                    version_info = {
-                        'version': data['version'],
-                        'url': data['download_url']
-                    }
-                    # 检查版本号是否有更新
-                    if current_versions[arch].get(version_name) != version_info['version']:
-                        print(f"检测到更新: {version_name} {arch}")
-                        current_versions[arch][version_name] = version_info['version']
-                        download_links[arch][version_name] = version_info['url']
-                    else:
-                        print(f"当前版本已是最新: {version_name} {arch}")
-
-                # data = decode(res)
-                # if data is None:
-                #     print("Error: decode返回为None",arch,k)
-                #     continue
-                # else:
-                #     break
+                    # print("res.headers:",res.headers)   #res.headers: {'Server': 'nginx', 'X-Goog-Generation': '1714395240799132', 'X-Goog-Metageneration': '1', 'X-Goog-Stored-Content-Encoding': 'identity', 'X-Goog-Stored-Content-Length': '61054664', 'X-Goog-Hash': 'crc32c=JToq+w==, md5=FmHraRZkw0Nv0GQSdYJltA==', 'X-Goog-Storage-Class': 'STANDARD', 'Accept-Ranges': 'bytes', 'X-Guploader-Uploadid': 'ABPtcPqDSc0d_Lf0EwhU0UAdZJXLlInBZXYJclg-MlohY95PPsofScUVGmSqZyb7qC2cFyNKf68', 'Strict-Transport-Security': 'max-age=31536000', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, clear', 'Via': '1.1 google, 1.1 google', 'Date': 'Tue, 30 Apr 2024 11:19:01 GMT', 'Expires': 'Tue, 30 Apr 2024 15:19:01 GMT', 'Cache-Control': 'max-age=14400', 'Age': '14143', 'Last-Modified': 'Mon, 29 Apr 2024 12:54:00 GMT', 'ETag': '"1661eb691664c3436fd06412758265b4"', 'Content-Type': 'application/x-msdos-program', 'Vary': 'Origin', 'Content-Length': '61054664'}
+                    # print("res.download_url:",res.url)   #res.download_url: https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win32/zh-CN/Firefox%20Setup%20125.0.3.exe
+                    # 从响应头中获取文件大小（字节）
+                    file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
+                    file_size_bytes = int(file_size_bytes_str)
+                    
+                    # 使用humansize函数获取用户友好的文件大小
+                    file_size_human = humansize(file_size_bytes)
+                    
+                    print(f"文件大小: {file_size_human}")
                     
             # if "release" in k:
             #     data['label'] = "Release稳定版"
