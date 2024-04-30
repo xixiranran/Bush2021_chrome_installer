@@ -118,7 +118,7 @@ def fetch():
 
             # 解析Last-Modified响应头中的日期和时间，但忽略任何偏移量
             # 提取日期和时间字符串
-            date_str = headers['last-modified'].split(';')[0]  # 只取日期和时间部分
+            date_str = res.headers['last-modified'].split(';')[0]  # 只取日期和时间部分
             
             # 解析日期和时间字符串
             last_modified_date = datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S %Z')
