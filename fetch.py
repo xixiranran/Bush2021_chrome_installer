@@ -61,11 +61,12 @@ def get_hashes(headers):
     # 按逗号分割不同的哈希值
     hash_parts = headers['X-Goog-Hash'].split(',')
     for part in hash_parts:
-        # 分离哈希类型和哈希值
-        hash_type, hash_value = part.split('=')
+        # 分离哈希类型和哈希值，确保仅分割第一个等号
+        hash_type = part.split('=')[0]
+        hash_value_encrypted = '='.join(part.split('=')[1:])
         # 由于哈希值是base64编码的，我们需要对其进行解码
-        decoded_value = base64.b64decode(hash_value).decode('utf-8')
-        hashes[hash_type] = decoded_value
+        hash_value = base64.b64decode(hash_value_encrypted).decode('utf-8')
+        hashes[hash_type] = hash_value
     return hashes
 
 def fetch():
