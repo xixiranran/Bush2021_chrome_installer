@@ -129,14 +129,21 @@ def fetch():
                 if res.status_code == 200:
                     # print("res.headers:",res.headers)   #res.headers: {'Server': 'nginx', 'X-Goog-Generation': '1714395240799132', 'X-Goog-Metageneration': '1', 'X-Goog-Stored-Content-Encoding': 'identity', 'X-Goog-Stored-Content-Length': '61054664', 'X-Goog-Hash': 'crc32c=JToq+w==, md5=FmHraRZkw0Nv0GQSdYJltA==', 'X-Goog-Storage-Class': 'STANDARD', 'Accept-Ranges': 'bytes', 'X-Guploader-Uploadid': 'ABPtcPqDSc0d_Lf0EwhU0UAdZJXLlInBZXYJclg-MlohY95PPsofScUVGmSqZyb7qC2cFyNKf68', 'Strict-Transport-Security': 'max-age=31536000', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, clear', 'Via': '1.1 google, 1.1 google', 'Date': 'Tue, 30 Apr 2024 11:19:01 GMT', 'Expires': 'Tue, 30 Apr 2024 15:19:01 GMT', 'Cache-Control': 'max-age=14400', 'Age': '14143', 'Last-Modified': 'Mon, 29 Apr 2024 12:54:00 GMT', 'ETag': '"1661eb691664c3436fd06412758265b4"', 'Content-Type': 'application/x-msdos-program', 'Vary': 'Origin', 'Content-Length': '61054664'}
                     # print("res.download_url:",res.url)   #res.download_url: https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win32/zh-CN/Firefox%20Setup%20125.0.3.exe
-                    # 从响应头中获取文件大小（字节）
-                    file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
-                    file_size_bytes = int(file_size_bytes_str)
-                    
-                    # 使用humansize函数获取用户友好的文件大小
-                    file_size_human = humansize(file_size_bytes)
-                    
-                    print(f"文件大小: {file_size_human}")
+                    break
+                else:
+                    print(f"请求失败，状态码：{response.status_code}")
+                    continue
+            #获取下载链接
+            print("res.download_url:",res.url)
+            
+            # 从响应头中获取文件大小（字节）
+            file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
+            file_size_bytes = int(file_size_bytes_str)
+            
+            # 使用humansize函数获取用户友好的文件大小
+            file_size_human = humansize(file_size_bytes)
+            
+            print(f"文件大小: {file_size_human}")
                     
             # if "release" in k:
             #     data['label'] = "Release稳定版"
