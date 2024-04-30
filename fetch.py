@@ -123,10 +123,10 @@ def fetchandsavejson():
         for k, v in info[arch].items():
             while True:
                 url = f"https://download.mozilla.org/?product={k}&os={v}&lang=zh-CN"
-                response = requests.get(url)
-                print("response:",response)
-                if response.status_code == 200:
-                    data = response.json()
+                res = requests.get(url)
+                print("response:",res)
+                if res.status_code == 200:
+                    data = res.json()
                     version_info = {
                         'version': data['version'],
                         'url': data['download_url']
@@ -156,7 +156,7 @@ def fetchandsavejson():
                 data['label'] = "Dev开发版"
             elif "nightly" in k:
                 data['label'] = "Nightly每夜版"
-            #print("res:",res)
+            print("res:",res)
             #print("data2:",data)
             #print("results:",results)
             #下面的代码因为我把data.json的格式改了，所以执行有问题，且我想到一个问题，就是他这个判断是判断的stable版本有无更新，有更新才执行后面的代码，但是有可能stable没更新，其他版本有更新，这样就会导致更新不及时，所以索性注释掉这个代码，让他按github action设置的时间频率，每次执行的时候都重新生成data.json，而且注释这段代码github action执行后自己也会判断生成的文件有无变化，如果没变化则不自动更新生成
