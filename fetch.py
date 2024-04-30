@@ -83,6 +83,20 @@ def get_hashes(headers):
     
     return hashes
 
+                
+# 解析Last-Modified响应头中的日期和时间
+def get_last_modified(headers):
+    # 提取日期和时间字符串
+    date_str = headers['last-modified'].split(';')[0]  # 只取日期和时间部分
+    
+    # 解析日期和时间字符串
+    last_modified_date = datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S %Z')
+    
+    # 将时间转换为微秒时间戳
+    timestamp_micros = int(last_modified_date.timestamp() * 1e6)
+
+    return timestamp_micros
+                
 def fetch():
     global results
     while True:
@@ -147,6 +161,14 @@ def fetch():
                 results['data'][arch][k]['label'] = "Dev开发版"
             elif "nightly" in k:
                 results['data'][arch][k]['label'] = "Nightly每夜版"
+
+            # 获取最后修改时间
+            last_modified = get_last_modified(response_headers)
+            
+            # 打印最后修改时间
+            results['data'][arch][k]['updatetime'] = last_modified
+            print(f"文件最后更新时间:", last_modified)
+            
     #获取最新时间并更新到data.json的time字典中
     results.update({'time': int(datetime.now().timestamp() * 1000)})
     with open('data.json', 'w') as f:
