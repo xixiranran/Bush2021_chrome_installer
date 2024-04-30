@@ -139,24 +139,24 @@ def fetchandsavejson():
                     else:
                         print(f"当前版本已是最新: {version_name} {arch}")
 
-                data = decode(res)
-                if data is None:
-                    print("Error: decode返回为None",arch,k)
-                    continue
-                else:
-                    break
+                # data = decode(res)
+                # if data is None:
+                #     print("Error: decode返回为None",arch,k)
+                #     continue
+                # else:
+                #     break
                     
-            if "release" in k:
-                data['label'] = "Release稳定版"
-            if "esr" in k:
-                data['label'] = "Esr稳定版"
-            elif "beta" in k:
-                data['label'] = "Beta测试版"
-            elif "devedition" in k:
-                data['label'] = "Dev开发版"
-            elif "nightly" in k:
-                data['label'] = "Nightly每夜版"
-            print("res:",res)
+            # if "release" in k:
+            #     data['label'] = "Release稳定版"
+            # if "esr" in k:
+            #     data['label'] = "Esr稳定版"
+            # elif "beta" in k:
+            #     data['label'] = "Beta测试版"
+            # elif "devedition" in k:
+            #     data['label'] = "Dev开发版"
+            # elif "nightly" in k:
+            #     data['label'] = "Nightly每夜版"
+            # print("res:",res)
             #print("data2:",data)
             #print("results:",results)
             #下面的代码因为我把data.json的格式改了，所以执行有问题，且我想到一个问题，就是他这个判断是判断的stable版本有无更新，有更新才执行后面的代码，但是有可能stable没更新，其他版本有更新，这样就会导致更新不及时，所以索性注释掉这个代码，让他按github action设置的时间频率，每次执行的时候都重新生成data.json，而且注释这段代码github action执行后自己也会判断生成的文件有无变化，如果没变化则不自动更新生成
@@ -165,17 +165,15 @@ def fetchandsavejson():
             #    continue
             #print("data['time']:",data['time'])
             #print("results['data']['win_x86']1:",results['data']['win_x86'])
-            if version_tuple(results['data'][arch][k]['version']) < version_tuple(data['version']):
-                print("results['data'][arch][k]['updatetime']:",arch,k,results['data'][arch][k]['updatetime'])
-                data['updatetime'] = int(datetime.now().timestamp() * 1000)
-                print("results['data'][arch][k]['version']:",arch,k,results['data'][arch][k]['version'])
-                print("data['version']:",data['version'])
-                print("data['updatetime']:",data['updatetime'])
+            # if version_tuple(results['data'][arch][k]['version']) < version_tuple(data['version']):
+            #     print("results['data'][arch][k]['updatetime']:",arch,k,results['data'][arch][k]['updatetime'])
+            #     data['updatetime'] = int(datetime.now().timestamp() * 1000)
+            #     print("results['data'][arch][k]['version']:",arch,k,results['data'][arch][k]['version'])
+            #     print("data['version']:",data['version'])
+            #     print("data['updatetime']:",data['updatetime'])
                 #如果版本有更新则输出更新的data的所有内容，如果版本号没更新就跳出本次循环，这样写是因为版本号请求有时候会变，一会变成新版本，一会又调到老版本了。这样写能保证data.json文件中的版本号是最新的。
-                results['data'][arch].update({k: data})
-                print("updated results['data'][arch][k]['version']:",k,results['data'][arch][k]['version'])
-                with open('data.json', 'w') as f:
-                    json.dump(results, f, indent=4)
+                # results['data'][arch].update({k: data})
+                # print("updated results['data'][arch][k]['version']:",k,results['data'][arch][k]['version'])
             # else:
             #     continue
                 # data['updatetime'] = results['data']['win_x86'][k]['updatetime']
