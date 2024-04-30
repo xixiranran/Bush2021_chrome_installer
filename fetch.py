@@ -101,7 +101,7 @@ def version_tuple(v):
     return tuple(map(int, (v.split("."))))
 
 #暂时没有想到办法较少post请求次数。
-def fetchandsavejson():
+def fetch():
     global results
     while True:
         try:
@@ -123,8 +123,20 @@ def fetchandsavejson():
         for k, v in info[arch].items():
             while True:
                 url = f"https://download.mozilla.org/?product={k}&os={v}&lang=zh-CN"
-                res = requests.get(url)
+                res = requests.get(url,allow_redirects=True)
                 print("response:",res)
+                if res.status_code == 200:
+                    # 检查是否成功获取到下载链接
+                    if 'Location' in res.headers:
+                        download_url = res.headers['Location']
+                        print(f"下载链接: {download_url}")
+                        return download_url
+                    else:
+                        print("未找到下载链接")
+                        return None
+                else:
+                    print(f"请求失败，状态码：{res.status_code}")
+                    return None
                 if res.status_code == 200:
                     data = res.json()
                     version_info = {
@@ -194,5 +206,5 @@ def humansize(nbytes):
     f = ('%.2f' % nbytes).rstrip('0').rstrip('.')
     return '%s %s' % (f, suffixes[i])
 
-fetchandsavejson()
+fetch()
 
