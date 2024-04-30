@@ -128,7 +128,7 @@ def fetch():
                 print("res:",res)
                 if res.status_code == 200:
                     # print("res.headers:",res.headers)
-                    print("res.url:",res.url)
+                    print("res.download_url:",res.url)
                     # 检查是否成功获取到下载链接
                     if 'Location' in res.headers:
                         download_url = res.headers['Location']
