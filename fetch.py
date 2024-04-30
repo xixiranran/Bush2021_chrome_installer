@@ -82,17 +82,6 @@ def get_hashes(headers):
         hashes[hash_type] = hash_value
     
     return hashes
-            
-# 解析Last-Modified响应头中的日期和时间，但忽略任何偏移量
-def get_last_modified(headers):
-    # 提取日期和时间字符串
-    date_str = headers['last-modified'].split(';')[0]  # 只取日期和时间部分
-    
-    # 解析日期和时间字符串
-    last_modified_date = datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S %Z')
-
-    # 将时间转换为13位毫秒时间戳
-    return int(last_modified_date.timestamp() * 1000)
                 
 def fetch():
     global results
@@ -126,45 +115,60 @@ def fetch():
                 else:
                     print(f"请求失败，状态码：{response.status_code}")
                     continue
-            #获取下载链接
-            # print("res.download_url:",res.url)
-            results['data'][arch][k]['url'] = res.url
-            
-            # 从响应头中获取文件大小（字节）
-            file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
-            # file_size_bytes = int(file_size_bytes_str)
-            
-            # 使用humansize函数获取用户友好的文件大小
-            # file_size_human = humansize(file_size_bytes)
-            results['data'][arch][k]['size'] = file_size_bytes_str
-            # print(f"文件大小: {file_size_human}")
 
-            # 获取哈希值
-            hashes = get_hashes(res.headers)
+            # 解析Last-Modified响应头中的日期和时间，但忽略任何偏移量
+            # 提取日期和时间字符串
+            date_str = headers['last-modified'].split(';')[0]  # 只取日期和时间部分
             
-            # 打印结果
-            results['data'][arch][k]['crc32c'] = hashes.get('crc32c')
-            results['data'][arch][k]['md5'] = hashes.get('md5')
-            # print(f"CRC32C Hash: {hashes.get('crc32c')}")
-            # print(f"MD5 Hash: {hashes.get('md5')}")
+            # 解析日期和时间字符串
+            last_modified_date = datetime.strptime(date_str, '%a, %d %b %Y %H:%M:%S %Z')
             
-            if "release" in k:
-                results['data'][arch][k]['label'] = "Release稳定版"
-            if "esr" in k:
-                results['data'][arch][k]['label'] = "Esr稳定版"
-            elif "beta" in k:
-                results['data'][arch][k]['label'] = "Beta测试版"
-            elif "devedition" in k:
-                results['data'][arch][k]['label'] = "Dev开发版"
-            elif "nightly" in k:
-                results['data'][arch][k]['label'] = "Nightly每夜版"
+            # 将时间转换为13位毫秒时间戳
+            last_modified_date13 = int(last_modified_date.timestamp() * 1000)
 
-            # 获取最后修改时间
-            last_modified = get_last_modified(res.headers)
-            
-            # 打印最后修改时间
-            results['data'][arch][k]['updatetime'] = last_modified
-            print(f"文件最后更新时间:", last_modified)
+            #如果firefox文件最后更新时间变了，就更新版本信息，反之则跳出当前循环
+            if last_modified_date13 != results['data'][arch][k]['updatetime']
+                # 获取最后修改时间
+                last_modified = get_last_modified(res.headers)
+                
+                # 更新和打印最后修改时间
+                results['data'][arch][k]['updatetime'] = last_modified
+                print(f"文件最后更新时间:", last_modified)
+
+                #获取下载链接
+                # print("res.download_url:",res.url)
+                results['data'][arch][k]['url'] = res.url
+                
+                # 从响应头中获取文件大小（字节）
+                file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
+                # file_size_bytes = int(file_size_bytes_str)
+                
+                # 使用humansize函数获取用户友好的文件大小
+                # file_size_human = humansize(file_size_bytes)
+                results['data'][arch][k]['size'] = file_size_bytes_str
+                # print(f"文件大小: {file_size_human}")
+    
+                # 获取哈希值
+                hashes = get_hashes(res.headers)
+                
+                # 打印结果
+                results['data'][arch][k]['crc32c'] = hashes.get('crc32c')
+                results['data'][arch][k]['md5'] = hashes.get('md5')
+                # print(f"CRC32C Hash: {hashes.get('crc32c')}")
+                # print(f"MD5 Hash: {hashes.get('md5')}")
+                
+                if "release" in k:
+                    results['data'][arch][k]['label'] = "Release稳定版"
+                if "esr" in k:
+                    results['data'][arch][k]['label'] = "Esr稳定版"
+                elif "beta" in k:
+                    results['data'][arch][k]['label'] = "Beta测试版"
+                elif "devedition" in k:
+                    results['data'][arch][k]['label'] = "Dev开发版"
+                elif "nightly" in k:
+                    results['data'][arch][k]['label'] = "Nightly每夜版"
+            else:
+                continue
             
     #获取最新时间并更新到data.json的time字典中
     results.update({'time': int(datetime.now().timestamp() * 1000)})
