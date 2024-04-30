@@ -9,46 +9,46 @@ import time
 info = {
     "win_x86": {
         "release": {
-            "appid": '''"firefox-latest"''',
-            "apVersion": '''"win"''',
+            "product": '''"firefox-latest"''',
+            "arch": '''"win"''',
         },
         "esr": {
-            "appid": '''"firefox-esr-latest"''',
-            "apVersion": '''"win"''',
+            "product": '''"firefox-esr-latest"''',
+            "arch": '''"win"''',
         },
         "beta": {
-            "appid": '''"firefox-beta-latest"''',
-            "apVersion": '''"win"''',
+            "product": '''"firefox-beta-latest"''',
+            "arch": '''"win"''',
         },
         "dev": {
-            "appid": '''"firefox-devedition-latest"''',
-            "apVersion": '''"win"''',
+            "product": '''"firefox-devedition-latest"''',
+            "arch": '''"win"''',
         },
         "nightly": {
-            "appid": '''"firefox-nightly-latest"''',
-            "apVersion": '''"win"''',
+            "product": '''"firefox-nightly-latest"''',
+            "arch": '''"win"''',
         }
     },
     "win_x64": {
         "release": {
-            "appid": '''"firefox-latest"''',
-            "apVersion": '''"win64"''',
+            "product": '''"firefox-latest"''',
+            "arch": '''"win64"''',
         },
         "esr": {
-            "appid": '''"firefox-esr-latest"''',
-            "apVersion": '''"win64"''',
+            "product": '''"firefox-esr-latest"''',
+            "arch": '''"win64"''',
         },
         "beta": {
-            "appid": '''"firefox-beta-latest"''',
-            "apVersion": '''"win64"''',
+            "product": '''"firefox-beta-latest"''',
+            "arch": '''"win64"''',
         },
         "dev": {
-            "appid": '''"firefox-devedition-latest"''',
-            "apVersion": '''"win64"''',
+            "product": '''"firefox-devedition-latest"''',
+            "arch": '''"win64"''',
         },
         "nightly": {
-            "appid": '''"firefox-nightly-latest"''',
-            "apVersion": '''"win64"''',
+            "product": '''"firefox-nightly-latest"''',
+            "arch": '''"win64"''',
         }
     }
 }
