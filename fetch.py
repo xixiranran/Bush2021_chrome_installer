@@ -139,7 +139,6 @@ def fetchandsavejson():
                     else:
                         print(f"当前版本已是最新: {version_name} {arch}")
 
-                res = post(**v)
                 data = decode(res)
                 if data is None:
                     print("Error: decode返回为None",arch,k)
