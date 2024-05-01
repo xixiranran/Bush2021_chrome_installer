@@ -1,5 +1,5 @@
 {
-    "time": 1714583543348,
+    "time": 1714587362735,
     "data": {
         "win_x86": {
             "release": {
@@ -21,22 +21,22 @@
                 "updatetime": 1713186597000
             },
             "beta": {
-                "version": "126.0b7",
-                "size": "61679616",
-                "crc32c": "64ea9b69",
-                "md5": "8cb0a94f474967b4bab84e693de056d0",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b7/win32/zh-CN/Firefox%20Setup%20126.0b7.exe",
+                "version": "126.0b8",
+                "size": "61576864",
+                "crc32c": "7767817d",
+                "md5": "d421d5b1a30e1a193b56871fba4b94b1",
+                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b8/win32/zh-CN/Firefox%20Setup%20126.0b8.exe",
                 "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714406186000
+                "updatetime": 1714584083000
             },
             "dev": {
-                "version": "126.0b7",
-                "size": "61769376",
-                "crc32c": "cb570d74",
-                "md5": "469e371aa05cef8f8b26ddfa60b554ec",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b7/win32/zh-CN/Firefox%20Setup%20126.0b7.exe",
+                "version": "126.0b8",
+                "size": "61656960",
+                "crc32c": "c288e8d5",
+                "md5": "d43c4120590b9cc39fd40ceafd2a2967",
+                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b8/win32/zh-CN/Firefox%20Setup%20126.0b8.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714408080000
+                "updatetime": 1714586464000
             },
             "nightly": {
                 "version": "127.0a1",
@@ -68,22 +68,22 @@
                 "updatetime": 1713186657000
             },
             "beta": {
-                "version": "126.0b7",
-                "size": "64380816",
-                "crc32c": "6cbd6780",
-                "md5": "df26d13aea21fb4111322ebec18a9ea4",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b7/win64/zh-CN/Firefox%20Setup%20126.0b7.exe",
+                "version": "126.0b8",
+                "size": "64395456",
+                "crc32c": "97023b57",
+                "md5": "cc2f40af5d78f46bea22f39ac9620721",
+                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b8/win64/zh-CN/Firefox%20Setup%20126.0b8.exe",
                 "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714406253000
+                "updatetime": 1714584179000
             },
             "dev": {
-                "version": "126.0b7",
-                "size": "64459544",
-                "crc32c": "25482566",
-                "md5": "9646af5f431c1e37cce957f6c0d6a039",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b7/win64/zh-CN/Firefox%20Setup%20126.0b7.exe",
+                "version": "126.0b8",
+                "size": "64507712",
+                "crc32c": "b7dab9a5",
+                "md5": "8fb2852956b700b297e2b91e2d9fb888",
+                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b8/win64/zh-CN/Firefox%20Setup%20126.0b8.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714408149000
+                "updatetime": 1714586534000
             },
             "nightly": {
                 "version": "127.0a1",
