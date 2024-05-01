@@ -149,14 +149,17 @@ def fetch():
                     # 分割字符串以获取版本号
                     version = download_url.split("/releases/")[1].split("/")[0]
                     print(f"版本号: {version}")
-                else:
-                    # 使用正则表达式匹配文件名中的版本号
-                    version_match = re.search(r"firefox-(\d+\.\d+\.\d+[a-z0-9]+)[.]", download_url)
-                    if version_match:
-                        version = version_match.group(1)
-                        print(f"版本号: {version}")
-                    else:
-                        print("未找到版本号")
+                elif "/nightly/" in download_url:
+                    # 找到 'firefox-' 的起始位置
+                    start_index = download_url.find('firefox-') + len('firefox-')
+                    
+                    # 找到 '.zh-CN.' 的起始位置
+                    end_index = download_url.find('.zh-CN.', start_index)
+                    
+                    # 从URL中提取版本号
+                    version = download_url[start_index:end_index]
+                    
+                    print(f"版本号: {version}")
                 
                 results['data'][arch][k]['version'] = version
                 
