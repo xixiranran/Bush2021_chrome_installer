@@ -1,5 +1,5 @@
 {
-    "time": 1714518738629,
+    "time": 1714525171832,
     "data": {
         "win_x86": {
             "release": {
@@ -40,12 +40,12 @@
             },
             "nightly": {
                 "version": "124.1.65.123",
-                "size": "63015536",
-                "crc32c": "406ed043",
-                "md5": "9ad741e46611844bb3ef584895f8f4c3",
+                "size": "63005080",
+                "crc32c": "77350ee4",
+                "md5": "42dc005bd08f46b098fbdec8a49e5711",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win32.installer.exe",
                 "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1714482464000
+                "updatetime": 1714521561000
             }
         },
         "win_x64": {
@@ -87,12 +87,12 @@
             },
             "nightly": {
                 "version": "124.1.65.123",
-                "size": "66175984",
-                "crc32c": "4309b675",
-                "md5": "9cca527d5e4f4620673369c2f1d268f6",
+                "size": "66189384",
+                "crc32c": "8dacdd93",
+                "md5": "2949780d5c963413705cd8353c804a06",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win64.installer.exe",
                 "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1714482471000
+                "updatetime": 1714522424000
             }
         }
     }
