@@ -5,6 +5,7 @@ import binascii
 import json
 from datetime import datetime, timezone
 import time
+import re
 
 info = {
     "win_x86": {
@@ -128,13 +129,36 @@ def fetch():
 
             #如果firefox文件最后更新时间变了，就更新版本信息，反之则跳出当前循环
             if last_modified_date13 != results['data'][arch][k]['updatetime']:
+                print(f"文件上次更新时间:", arch, k, results['data'][arch][k]['updatetime'])
                 # 更新和打印最后修改时间
                 results['data'][arch][k]['updatetime'] = last_modified_date13
-                print(f"文件最后更新时间:", last_modified_date13)
+                print(f"文件最后更新时间:", arch, k, last_modified_date13)
 
+                download_url = res.url
                 #获取下载链接
                 # print("res.download_url:",res.url)
-                results['data'][arch][k]['url'] = res.url
+                results['data'][arch][k]['url'] = download_url
+                
+                #获取firefox版本号
+                # 在这段代码中，我们首先检查URL中是否包含 /releases/。如果是这样，我们使用 split 方法来提取版本号。我们分割字符串两次，第一次是基于 /releases/，获取版本号和剩余URL的部分；第二次是基于 /，以获取版本号。
+
+                # 对于不包含 /releases/ 的URL，我们使用一个正则表达式来匹配文件名中的版本号。这里，我们查找模式 firefox-(\d+\.\d+\.\d+[a-z0-9]+)[.] 来匹配如 127.0a1 这样的版本号。
+                
+                # 这种方法允许我们根据不同的URL格式来提取版本号，而无需对所有链接使用正则表达式。
+                if "/releases/" in download_url:
+                    # 分割字符串以获取版本号
+                    version = download_url.split("/releases/")[1].split("/")[0]
+                    print(f"版本号: {version}")
+                else:
+                    # 使用正则表达式匹配文件名中的版本号
+                    version_match = re.search(r"firefox-(\d+\.\d+\.\d+[a-z0-9]+)[.]", download_url)
+                    if version_match:
+                        version = version_match.group(1)
+                        print(f"版本号: {version}")
+                    else:
+                        print("未找到版本号")
+                
+                results['data'][arch][k]['version'] = version
                 
                 # 从响应头中获取文件大小（字节）
                 file_size_bytes_str = res.headers.get('X-Goog-Stored-Content-Length', '0')
