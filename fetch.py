@@ -5,7 +5,6 @@ import binascii
 import json
 from datetime import datetime, timezone
 import time
-import re
 
 info = {
     "win_x86": {
@@ -140,16 +139,13 @@ def fetch():
                 results['data'][arch][k]['url'] = download_url
                 
                 #获取firefox版本号
-                # 在这段代码中，我们首先检查URL中是否包含 /releases/。如果是这样，我们使用 split 方法来提取版本号。我们分割字符串两次，第一次是基于 /releases/，获取版本号和剩余URL的部分；第二次是基于 /，以获取版本号。
-
-                # 对于不包含 /releases/ 的URL，我们使用一个正则表达式来匹配文件名中的版本号。这里，我们查找模式 firefox-(\d+\.\d+\.\d+[a-z0-9]+)[.] 来匹配如 127.0a1 这样的版本号。
-                
-                # 这种方法允许我们根据不同的URL格式来提取版本号，而无需对所有链接使用正则表达式。
                 if "/releases/" in download_url:
+                    # 在这段代码中，我们首先检查URL中是否包含 /releases/。如果是这样，我们使用 split 方法来提取版本号。我们分割字符串两次，第一次是基于 /releases/，获取版本号和剩余URL的部分；第二次是基于 /，以获取版本号。
                     # 分割字符串以获取版本号
                     version = download_url.split("/releases/")[1].split("/")[0]
                     print(f"版本号: {version}")
                 elif "/nightly/" in download_url:
+                    # 在这段代码中，我们使用find方法找到'firefox-'的起始位置，然后找到从这个位置之后第一次出现'.zh-CN.'的起始位置。我们通过这两个位置之间的字符串来提取版本号。这种方法不依赖于正则表达式，而是使用字符串的基本操作来获取所需的版本信息。
                     # 找到 'firefox-' 的起始位置
                     start_index = download_url.find('firefox-') + len('firefox-')
                     
