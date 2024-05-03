@@ -1,5 +1,5 @@
 {
-    "time": 1714749195917,
+    "time": 1714752992606,
     "data": {
         "win_x86": {
             "release": {
@@ -30,13 +30,13 @@
                 "updatetime": 1714584083000
             },
             "dev": {
-                "version": "126.0b8",
-                "size": "61656960",
-                "crc32c": "c288e8d5",
-                "md5": "d43c4120590b9cc39fd40ceafd2a2967",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b8/win32/zh-CN/Firefox%20Setup%20126.0b8.exe",
+                "version": "126.0b9",
+                "size": "61672824",
+                "crc32c": "7af3622b",
+                "md5": "90f7f770c2a24466ae4fb3be9caff705",
+                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b9/win32/zh-CN/Firefox%20Setup%20126.0b9.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714586464000
+                "updatetime": 1714751471000
             },
             "nightly": {
                 "version": "127.0a1",
@@ -77,13 +77,13 @@
                 "updatetime": 1714584179000
             },
             "dev": {
-                "version": "126.0b8",
-                "size": "64507712",
-                "crc32c": "b7dab9a5",
-                "md5": "8fb2852956b700b297e2b91e2d9fb888",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b8/win64/zh-CN/Firefox%20Setup%20126.0b8.exe",
+                "version": "126.0b9",
+                "size": "64745640",
+                "crc32c": "1fdc0d4f",
+                "md5": "7a971e0cfd1f28d46480432111d20204",
+                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b9/win64/zh-CN/Firefox%20Setup%20126.0b9.exe",
                 "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714586534000
+                "updatetime": 1714751541000
             },
             "nightly": {
                 "version": "127.0a1",
