@@ -1,5 +1,5 @@
 {
-    "time": 1714777963502,
+    "time": 1714784108814,
     "data": {
         "win_x86": {
             "release": {
@@ -40,12 +40,12 @@
             },
             "nightly": {
                 "version": "127.0a1",
-                "size": "63079152",
-                "crc32c": "1e214aa2",
-                "md5": "b6ef345f4a3f3efabe4ccb932d6fca09",
+                "size": "63004032",
+                "crc32c": "29863e59",
+                "md5": "8559f6c8d6d1091220b8871473856748",
                 "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win32.installer.exe",
                 "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1714734406000
+                "updatetime": 1714783774000
             }
         },
         "win_x64": {
