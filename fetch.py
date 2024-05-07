@@ -31,32 +31,27 @@ while True:
             # 寻找每个.list div中的<p>标签以获取版本信息
             p_tag = list_div.find('p')
             if p_tag:
-                # 分割文本获取版本号和更新时间
-                parts = p_tag.text.split()
-                if len(parts) >= 3:  # 确保有足够的文本部分
-                    version = parts[0]  # 第一个部分是版本号
-                    date = parts[-1].strip('[]')  # 最后一个部分是日期，去除方括号
+                # 提取版本号和更新时间
+                version = p_tag.text.split(' ')[0]  # 假设版本号是文本的第一个元素
+                date = p_tag.text.split('<i>')[1].split('</i>')[0]  # 提取日期
     
-                    # 寻找下载链接
-                    for button_div in list_div.find_all('div', class_='button'):
-                        for link in button_div.find_all('a', href=True):
-                            if "便携版" in link.text:
-                                full_url = requests.utils.urljoin(url, link['href'])
-                                combined_info.append({
-                                    'version': version,
-                                    'date': date,
-                                    'download_links': [{'href': full_url, 'text': link.text.strip()}]
-                                })
-    
-        # 打印综合信息
-        for info in combined_info:
-            print(f"Version: {info['version']}, Date: {info['date']}, Download Link: {info['download_links'][0]['href']}")
+                # 查找下载链接
+                button_div = list_div.find_next_sibling('div', class_='button')
+                if button_div:
+                    for link in button_div.find_all('a', href=True):
+                        if "便携版" in link.text:
+                            full_url = requests.utils.urljoin(url, link['href'])
+                            combined_info.append({
+                                'version': version,
+                                'date': date,
+                                'download_links': [{'href': full_url, 'text': link.text}]
+                            })
     
         # 将综合信息保存到JSON文件中
         with open('data.json', 'w', encoding='utf-8') as f:
             json.dump(combined_info, f, ensure_ascii=False, indent=4)
-        
-        print("Portable download links have been updated.")
+    
+        print("Combined information has been updated and saved to combined_info.json.")
         break
     else:
         print("Failed to retrieve the webpage. Status code:", response.status_code)
