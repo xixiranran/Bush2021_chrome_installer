@@ -17,15 +17,29 @@ response = requests.get(url, headers=headers)
 if response.status_code == 200:
     # 使用BeautifulSoup解析HTML内容
     soup = BeautifulSoup(response.text, 'html.parser')
-    # 假设所有的下载链接都在class为"download-link"的a标签中
+    
+    # 找到所有的exe和apk下载链接
     download_links = []
+
+    # 寻找exe下载链接，假设它们在class为"download-link"的a标签中
     for link in soup.find_all('a', class_='download-link'):
         href = link.get('href')
         text = link.text.strip()
-        download_links.append({'href': href, 'text': text})
+        # 检查是否是exe链接，并且不是第一个链接
+        if ".exe" in href and text != 'Download Vivaldi':
+            download_links.append({'href': href, 'text': text})
     
+    # 寻找apk下载链接，假设它们在id为"dl-mobile"的div中的a标签下
+    apk_parent_div = soup.find('div', id='dl-mobile')
+    if apk_parent_div:
+        for apk_link in apk_parent_div.find_all('a', href=True):
+            if apk_link['href'].endswith('.apk'):
+                download_links.append({'href': apk_link['href'], 'text': apk_link.text.strip()})
+
     # 将下载链接保存到一个JSON文件中
     with open('data.json', 'w') as f:
         json.dump(download_links, f, indent=4)
     
     print("Download links have been updated.")
+else:
+    print("Failed to retrieve the webpage. Status code:", response.status_code)
