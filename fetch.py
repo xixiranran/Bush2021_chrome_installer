@@ -13,10 +13,13 @@ headers = {
 while True:
     # 发送HTTP GET请求
     response = requests.get(url, headers=headers)
-    print("response.text:",response.text)
-    print("response.status_code:",response.status_code)
+    # print("response.text:",response.text)
+    # print("response.status_code:",response.status_code)
     # 确保请求成功
     if response.status_code == 200:
+        # 尝试将响应内容解码为utf-8，如果失败则使用默认编码
+        response.encoding = response.apparent_encoding or 'utf-8'
+        
         # 使用BeautifulSoup解析HTML内容
         soup = BeautifulSoup(response.text, 'html.parser')
         download_links = []
