@@ -23,11 +23,11 @@ if response.status_code == 200:
 
     # 寻找exe下载链接，假设它们在class为"download-link"的a标签中
     for link in soup.find_all('a', class_='download-link'):
+        if i == 0:  # 忽略第一个链接
+            continue
         href = link.get('href')
         text = link.text.strip()
-        # 检查是否是exe链接，并且不是第一个链接
-        if ".exe" in href and text != 'Download Vivaldi':
-            download_links.append({'href': href, 'text': text})
+        download_links.append({'href': href, 'text': text})
     
     # 寻找apk下载链接，假设它们在id为"dl-mobile"的div中的a标签下
     apk_parent_div = soup.find('div', id='dl-mobile')
