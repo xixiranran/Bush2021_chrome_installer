@@ -25,13 +25,13 @@ while True:
         # 寻找包含“便携版”文本的下载链接
         for button_div in soup.find_all('div', class_='button'):
             for link in button_div.find_all('a', href=True):
-                if "便携版" in link.text:
+                if "便携" in link.text:
                     full_url = urljoin(url, link['href'])
                     download_links.append({'href': full_url, 'text': link.text.strip()})
     
         # 将下载链接保存到一个JSON文件中
-        with open('data.json', 'w', encoding='utf-8') as f:
-            json.dump(download_links, f, ensure_ascii=False, indent=4)
+        with open('data.json', 'w') as f:
+            json.dump(download_links, f, indent=4)
         
         print("Portable download links have been updated.")
         break
