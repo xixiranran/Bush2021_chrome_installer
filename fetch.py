@@ -33,10 +33,28 @@ while True:
                     full_url = urljoin(url, link['href'])
                     # print("full_url:",full_url)
                     download_links.append({'href': full_url, 'text': link.text.strip()})
+                    
+        # 找到所有的版本信息
+        version_info = []
     
+        # 寻找所有包含版本信息的.list div
+        for list_div in soup.find_all('div', class_='list'):
+            # 寻找每个.list div中的版本号和更新时间
+            version = list_div.find('p').text.split(' ')[0]  # 提取版本号
+            date = list_div.find('p').text.split('<i>')[1].split('</i>')[0]  # 提取更新时间
+            # 添加到版本信息列表
+            version_info.append({'version': version, 'date': date})
+    
+        # 打印版本信息
+        for info in version_info:
+            print(f"Version: {info['version']}, Date: {info['date']}")
+    
+        # 如果需要，也可以将版本信息保存到JSON文件中
+        with open('data.json', 'w', encoding='utf-8') as f:
+            json.dump(version_info, f, ensure_ascii=False, indent=4)
         # 将下载链接保存到一个JSON文件中
-        with open('data.json', 'w') as f:
-            json.dump(download_links, f, indent=4)
+        # with open('data.json', 'w') as f:
+        #     json.dump(download_links, f, indent=4)
         
         print("Portable download links have been updated.")
         break
