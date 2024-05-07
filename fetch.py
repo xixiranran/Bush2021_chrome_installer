@@ -13,8 +13,8 @@ headers = {
 while True:
     # 发送HTTP GET请求
     response = requests.get(url, headers=headers)
-    print("response.text:",response.text)
-    print("response.status_code:",response.status_code)
+    # print("response.text:",response.text)
+    # print("response.status_code:",response.status_code)
     # 确保请求成功
     if response.status_code == 200:
         # 尝试将响应内容解码为utf-8，如果失败则使用默认编码
@@ -31,7 +31,7 @@ while True:
             for link in button_div.find_all('a', href=True):
                 if "便携" in link.text:
                     full_url = urljoin(url, link['href'])
-                    print("full_url:",full_url)
+                    # print("full_url:",full_url)
                     download_links.append({'href': full_url, 'text': link.text.strip()})
     
         # 将下载链接保存到一个JSON文件中
