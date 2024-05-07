@@ -34,6 +34,7 @@ while True:
             json.dump(download_links, f, ensure_ascii=False, indent=4)
         
         print("Portable download links have been updated.")
+        break
     else:
         print("Failed to retrieve the webpage. Status code:", response.status_code)
         continue
