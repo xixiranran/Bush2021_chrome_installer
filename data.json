@@ -1,99 +1,54 @@
-{
-    "time": 1715087578299,
-    "data": {
-        "win_x86": {
-            "release": {
-                "version": "125.0.3",
-                "size": "61054664",
-                "crc32c": "253a2afb",
-                "md5": "1661eb691664c3436fd06412758265b4",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win32/zh-CN/Firefox%20Setup%20125.0.3.exe",
-                "label": "Release\u53d1\u884c\u7248",
-                "updatetime": 1714395240000
-            },
-            "esr": {
-                "version": "115.10.0esr",
-                "size": "56986696",
-                "crc32c": "689694e7",
-                "md5": "bbbc398a1e3238d51ee388c55a2e4db9",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/115.10.0esr/win32/zh-CN/Firefox%20Setup%20115.10.0esr.exe",
-                "label": "Esr\u7a33\u5b9a\u7248",
-                "updatetime": 1713186597000
-            },
-            "beta": {
-                "version": "126.0b9",
-                "size": "61592072",
-                "crc32c": "4f168d9e",
-                "md5": "1527ee58f9a7fa7fb81c424188ecc38e",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b9/win32/zh-CN/Firefox%20Setup%20126.0b9.exe",
-                "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714754946000
-            },
-            "dev": {
-                "version": "126.0b9",
-                "size": "61672824",
-                "crc32c": "7af3622b",
-                "md5": "90f7f770c2a24466ae4fb3be9caff705",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b9/win32/zh-CN/Firefox%20Setup%20126.0b9.exe",
-                "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714751471000
-            },
-            "nightly": {
-                "version": "127.0a1",
-                "size": "63051456",
-                "crc32c": "a9bdfa48",
-                "md5": "3390b06cb18bbbba5dbd237a625c5ec7",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win32.installer.exe",
-                "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1715084776000
-            }
-        },
-        "win_x64": {
-            "release": {
-                "version": "125.0.3",
-                "size": "63764592",
-                "crc32c": "e427bf7c",
-                "md5": "b0055edc1c007cf482806c17f50b8437",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/125.0.3/win64/zh-CN/Firefox%20Setup%20125.0.3.exe",
-                "label": "Release\u53d1\u884c\u7248",
-                "updatetime": 1714395343000
-            },
-            "esr": {
-                "version": "115.10.0esr",
-                "size": "58544328",
-                "crc32c": "9da3ba3f",
-                "md5": "838db20ccc4e9590dfb54972a42c18ec",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/115.10.0esr/win64/zh-CN/Firefox%20Setup%20115.10.0esr.exe",
-                "label": "Esr\u7a33\u5b9a\u7248",
-                "updatetime": 1713186657000
-            },
-            "beta": {
-                "version": "126.0b9",
-                "size": "64695144",
-                "crc32c": "c0620a89",
-                "md5": "bc4182d0ff91aab17dc6616b4a269ecd",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/126.0b9/win64/zh-CN/Firefox%20Setup%20126.0b9.exe",
-                "label": "Beta\u6d4b\u8bd5\u7248",
-                "updatetime": 1714755076000
-            },
-            "dev": {
-                "version": "126.0b9",
-                "size": "64745640",
-                "crc32c": "1fdc0d4f",
-                "md5": "7a971e0cfd1f28d46480432111d20204",
-                "url": "https://download-installer.cdn.mozilla.net/pub/devedition/releases/126.0b9/win64/zh-CN/Firefox%20Setup%20126.0b9.exe",
-                "label": "Dev \u5f00\u53d1\u7248",
-                "updatetime": 1714751541000
-            },
-            "nightly": {
-                "version": "127.0a1",
-                "size": "66248520",
-                "crc32c": "670d6d1e",
-                "md5": "b06a871e6c0cec47886b9e2ac9a946ae",
-                "url": "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central-l10n/firefox-127.0a1.zh-CN.win64.installer.exe",
-                "label": "Nightly\u6bcf\u591c\u7248",
-                "updatetime": 1715086088000
-            }
-        }
+[
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.6.7.3329.24.x64.exe",
+        "text": "Vivaldi 6.7"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.6.7.3329.24.x64.exe",
+        "text": "Windows 64bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.6.7.3329.24.exe",
+        "text": "Windows 32bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.6.7.3329.24.universal.dmg",
+        "text": "macOS 10.15+ 64bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable_6.7.3329.24-1_amd64.deb",
+        "text": "Linux DEB 64bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable-6.7.3329.24-1.x86_64.rpm",
+        "text": "Linux RPM 64bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable_6.7.3329.24-1_armhf.deb",
+        "text": "Linux DEB ARM"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable_6.7.3329.24-1_arm64.deb",
+        "text": "Linux DEB ARM64"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable-6.7.3329.24-1.armv7hl.rpm",
+        "text": "Linux RPM ARM"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/vivaldi-stable-6.7.3329.24-1.aarch64.rpm",
+        "text": "Linux RPM ARM64"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.5.6.2867.62.exe",
+        "text": "Windows 7 32bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.5.6.2867.62.x64.exe",
+        "text": "Windows 7 64bit"
+    },
+    {
+        "href": "https://downloads.vivaldi.com/stable/Vivaldi.1.0.435.46.exe",
+        "text": "Windows XP/Vista 32bit"
     }
-}
+]
