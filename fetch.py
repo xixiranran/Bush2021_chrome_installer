@@ -4,8 +4,13 @@ from bs4 import BeautifulSoup
 # 目标网页的URL
 url = 'https://vivaldi.com/zh-hans/download/'
 
+# 设置请求头部，模拟浏览器User-Agent
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
+
 # 发送HTTP GET请求
-response = requests.get(url)
+response = requests.get(url, headers=headers)
 
 # 确保请求成功
 if response.status_code == 200:
