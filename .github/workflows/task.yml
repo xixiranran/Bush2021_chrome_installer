@@ -15,7 +15,9 @@ jobs:
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
     - name: Check Update
-      run: python fetch.py
+      run: |
+          pip install beautifulsoup4
+          python fetch.py
 
     # - name: Download Latest Stable Release
       # run: python download.py
