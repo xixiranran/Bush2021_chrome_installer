@@ -13,7 +13,8 @@ headers = {
 while True:
     # 发送HTTP GET请求
     response = requests.get(url, headers=headers)
-    
+    print("response.text:",response.text)
+    print("response.status_code:",response.status_code)
     # 确保请求成功
     if response.status_code == 200:
         # 使用BeautifulSoup解析HTML内容
