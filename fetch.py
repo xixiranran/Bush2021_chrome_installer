@@ -39,15 +39,23 @@ while True:
     
         # 寻找所有包含版本信息的.list div
         for list_div in soup.find_all('div', class_='list'):
-            # 寻找每个.list div中的版本号和更新时间
-            version = list_div.find('p').text.split(' ')[0]  # 提取版本号
-            date = list_div.find('p').text.split('<i>')[1].split('</i>')[0]  # 提取更新时间
-            # 添加到版本信息列表
-            version_info.append({'version': version, 'date': date})
+            # 寻找每个.list div中的<p>标签
+            p_tag = list_div.find('p', id=None)  # id=None 确保选择的是不带id的<p>标签
+            if p_tag:
+                # 分割文本获取版本号和更新时间
+                text_parts = p_tag.text.split()
+                if len(text_parts) >= 2:  # 确保有足够的文本部分
+                    version = text_parts[0]  # 第一个部分是版本号
+                    date = text_parts[-1]  # 最后一个部分是日期
+                    # 检查日期格式是否正确
+                    if date.startswith('[') and date.endswith(']'):
+                        date = date[1:-1]  # 移除日期的括号
+                        version_info.append({'version': version, 'date': date})
     
         # 打印版本信息
         for info in version_info:
             print(f"Version: {info['version']}, Date: {info['date']}")
+
     
         # 如果需要，也可以将版本信息保存到JSON文件中
         with open('data.json', 'w', encoding='utf-8') as f:
