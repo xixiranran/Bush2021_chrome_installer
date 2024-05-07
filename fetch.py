@@ -28,24 +28,31 @@ while True:
     
         # 寻找所有包含版本信息和下载链接的.list div
         for list_div in soup.find_all('div', class_='list'):
-            # 寻找每个.list div中的<p>标签以获取版本信息
-            p_tag = list_div.find('p')
-            if p_tag:
-                # 提取版本号和更新时间
-                version = p_tag.text.split(' ')[0]  # 假设版本号是文本的第一个元素
-                date = p_tag.text.split('<i>')[1].split('</i>')[0]  # 提取日期
+            version_info = list_div.find('p')  # 寻找<p>标签以获取版本信息
+            if version_info:
+                # 拆分文本获取版本号和更新时间
+                version_parts = version_info.text.split()
+                if len(version_parts) > 1:  # 确保有足够的文本部分
+                    version = version_parts[0]  # 第一个元素是版本号
+                    # 假设日期紧跟在版本号之后，并且以方括号包围
+                    date = version_parts[1] if version_parts[1].startswith('[') and version_parts[1].endswith(']') else ''
     
                 # 查找下载链接
-                button_div = list_div.find_next_sibling('div', class_='button')
-                if button_div:
-                    for link in button_div.find_all('a', href=True):
+                download_buttons = list_div.find_next_siblings('div', class_='button')
+                download_links = []
+                for button in download_buttons:
+                    for link in button.find_all('a', href=True):
                         if "便携版" in link.text:
                             full_url = requests.utils.urljoin(url, link['href'])
-                            combined_info.append({
-                                'version': version,
-                                'date': date,
-                                'download_links': [{'href': full_url, 'text': link.text}]
-                            })
+                            download_links.append({'href': full_url, 'text': link.text.strip()})
+    
+                # 将信息添加到列表
+                if version and download_links:
+                    combined_info.append({
+                        'version': version,
+                        'date': date,
+                        'download_links': download_links
+                    })
     
         # 将综合信息保存到JSON文件中
         with open('data.json', 'w', encoding='utf-8') as f:
