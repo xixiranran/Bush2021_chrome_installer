@@ -29,7 +29,7 @@ while True:
         # 寻找所有包含版本信息和下载链接的.list div
         for list_div in soup.find_all('div', class_='list'):
             # 寻找每个.list div中的<p>标签以获取版本信息
-            p_tag = list_div.find('p', id=None)
+            p_tag = list_div.find('p')
             if p_tag:
                 # 分割文本获取版本号和更新时间
                 parts = p_tag.text.split()
