@@ -22,47 +22,39 @@ while True:
         
         # 使用BeautifulSoup解析HTML内容
         soup = BeautifulSoup(response.text, 'html.parser')
-        download_links = []
-    
-        # 寻找exe下载链接，假设它们在class为"button"的a标签中
-        # 由于您只想要便携版的链接，这里我们可以根据文本内容来过滤
-        # 寻找包含“便携版”文本的下载链接
-        for button_div in soup.find_all('div', class_='button'):
-            for link in button_div.find_all('a', href=True):
-                if "便携" in link.text:
-                    full_url = urljoin(url, link['href'])
-                    # print("full_url:",full_url)
-                    download_links.append({'href': full_url, 'text': link.text.strip()})
                     
-        # 找到所有的版本信息
-        version_info = []
+        # 初始化综合信息列表
+        combined_info = []
     
-        # 寻找所有包含版本信息的.list div
+        # 寻找所有包含版本信息和下载链接的.list div
         for list_div in soup.find_all('div', class_='list'):
-            # 寻找每个.list div中的<p>标签
-            p_tag = list_div.find('p', id=None)  # id=None 确保选择的是不带id的<p>标签
+            # 寻找每个.list div中的<p>标签以获取版本信息
+            p_tag = list_div.find('p', id=None)
             if p_tag:
                 # 分割文本获取版本号和更新时间
-                text_parts = p_tag.text.split()
-                if len(text_parts) >= 2:  # 确保有足够的文本部分
-                    version = text_parts[0]  # 第一个部分是版本号
-                    date = text_parts[-1]  # 最后一个部分是日期
-                    # 检查日期格式是否正确
-                    if date.startswith('[') and date.endswith(']'):
-                        date = date[1:-1]  # 移除日期的括号
-                        version_info.append({'version': version, 'date': date})
+                parts = p_tag.text.split()
+                if len(parts) >= 3:  # 确保有足够的文本部分
+                    version = parts[0]  # 第一个部分是版本号
+                    date = parts[-1].strip('[]')  # 最后一个部分是日期，去除方括号
     
-        # 打印版本信息
-        for info in version_info:
-            print(f"Version: {info['version']}, Date: {info['date']}")
-
+                    # 寻找下载链接
+                    for button_div in list_div.find_all('div', class_='button'):
+                        for link in button_div.find_all('a', href=True):
+                            if "便携版" in link.text:
+                                full_url = requests.utils.urljoin(url, link['href'])
+                                combined_info.append({
+                                    'version': version,
+                                    'date': date,
+                                    'download_links': [{'href': full_url, 'text': link.text.strip()}]
+                                })
     
-        # 如果需要，也可以将版本信息保存到JSON文件中
+        # 打印综合信息
+        for info in combined_info:
+            print(f"Version: {info['version']}, Date: {info['date']}, Download Link: {info['download_links'][0]['href']}")
+    
+        # 将综合信息保存到JSON文件中
         with open('data.json', 'w', encoding='utf-8') as f:
-            json.dump(version_info, f, ensure_ascii=False, indent=4)
-        # 将下载链接保存到一个JSON文件中
-        # with open('data.json', 'w') as f:
-        #     json.dump(download_links, f, indent=4)
+            json.dump(combined_info, f, ensure_ascii=False, indent=4)
         
         print("Portable download links have been updated.")
         break
