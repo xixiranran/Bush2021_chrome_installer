@@ -18,13 +18,11 @@ while True:
     if response.status_code == 200:
         # 使用BeautifulSoup解析HTML内容
         soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # 找到所有的exe和apk下载链接
         download_links = []
     
-        # 寻找exe下载链接，假设它们在class为"download-link"的a标签中
+        # 寻找exe下载链接，假设它们在class为"button"的a标签中
         # 由于您只想要便携版的链接，这里我们可以根据文本内容来过滤
-        for link in soup.find_all('a'):
+        for link in soup.find_all('a', class_='button'):
             if "便携版" in link.text:
                 href = link.get('href')
                 text = link.text.strip()
