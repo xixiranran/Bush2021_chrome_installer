@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from urllib.parse import urljoin
 
 # 目标网页的URL
 url = 'https://vivaldi.com/zh-hans/download/'
@@ -34,7 +35,9 @@ if response.status_code == 200:
     if apk_parent_div:
         for apk_link in apk_parent_div.find_all('a', href=True):
             if apk_link['href'].endswith('.apk'):
-                download_links.append({'href': apk_link['href'], 'text': apk_link.text.strip()})
+                # 直接替换掉"(默认)"文本
+                link_text = apk_link.text.strip().replace('(默认)', '')
+                download_links.append({'href': urljoin(url, apk_link['href']), 'text': link_text})
 
     # 将下载链接保存到一个JSON文件中
     with open('data.json', 'w') as f:
