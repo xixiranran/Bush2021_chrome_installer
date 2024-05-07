@@ -22,20 +22,18 @@ while True:
     
         # 寻找exe下载链接，假设它们在class为"button"的a标签中
         # 由于您只想要便携版的链接，这里我们可以根据文本内容来过滤
-        for link in soup.find_all('a', class_='button'):
-            if "便携版" in link.text:
-                href = link.get('href')
-                text = link.text.strip()
-                # 确保链接是exe文件
-                if href.endswith('.exe'):
-                    download_links.append({'href': urljoin(url, href), 'text': text})
-        
+        # 寻找包含“便携版”文本的下载链接
+        for button_div in soup.find_all('div', class_='button'):
+            for link in button_div.find_all('a', href=True):
+                if "便携版" in link.text:
+                    full_url = urljoin(url, link['href'])
+                    download_links.append({'href': full_url, 'text': link.text.strip()})
+    
         # 将下载链接保存到一个JSON文件中
-        with open('data.json', 'w') as f:
-            json.dump(download_links, f, indent=4)
+        with open('data.json', 'w', encoding='utf-8') as f:
+            json.dump(download_links, f, ensure_ascii=False, indent=4)
         
         print("Portable download links have been updated.")
-        break
     else:
         print("Failed to retrieve the webpage. Status code:", response.status_code)
         continue
