@@ -39,7 +39,7 @@ while True:
             if button_div:
                 download_links = []
                 for link in button_div.find_all('a', href=True):
-                    full_url = requests.utils.urljoin(url, link['href'])
+                    full_url = urljoin(url, link['href'])  # 使用urllib.parse的urljoin函数
                     print("full_url:",full_url)
                     download_links.append({'href': full_url, 'text': link.text.strip()})
     
