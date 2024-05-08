@@ -35,6 +35,7 @@ while True:
                 # 提取日期，注意日期紧跟在'<i>'标签之后，并以'</i>'结束
                 date_match = p_tag.text.split('<i>')[1].split('</i>')[0]
                 date = date_match.strip()
+                print("date:",date)
     
             # 在同一.list div中查找.button div以获取下载链接
             button_div = list_div.find('div', class_='button')
