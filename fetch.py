@@ -35,6 +35,7 @@ while True:
     
             # 查找同级的.button div以获取下载链接
             button_div = list_div.find_next_sibling('div', class_='button')
+            print("button_div:",button_div)
             if button_div:
                 download_links = []
                 for link in button_div.find_all('a', href=True):
