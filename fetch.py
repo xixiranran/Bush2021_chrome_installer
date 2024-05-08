@@ -38,14 +38,14 @@ while True:
                 if p_tag.text.startswith('v') and p_tag.text.count('.') == 3:
                     # 提取版本号
                     version = p_tag.text.split()[0]
-                    print("version:",version)
+                    # print("version:",version)
                     # 尝试提取日期，假设日期紧跟在版本号之后，并且以方括号包围
                     # if ' [' in p_tag.text:
                     #     date = p_tag.text.split(' ')[-1].strip('[]')
                     #     print("date:",date)
                     # 尝试提取日期，假设日期紧跟在版本号之后，并且以方括号包围
                     date = p_tag.text.split(' ')[-1].strip('[]')
-                    print("date:",date)
+                    # print("date:",date)
                     
                     # 查找下载链接
                     download_buttons = list_div.find_next_sibling('div', class_='button')
@@ -54,6 +54,7 @@ while True:
                         for link in download_buttons.find_all('a', href=True):
                             if "便携" in link.text:
                                 full_url = urljoin(url, link['href'])
+                                print("full_url:",full_url)
                                 download_links.append({'href': full_url, 'text': link.text.strip()})
     
                         # 将信息添加到列表
