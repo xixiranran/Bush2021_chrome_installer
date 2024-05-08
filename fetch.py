@@ -35,13 +35,14 @@ while True:
     
             # 在同一.list div中查找.button div以获取下载链接
             button_div = list_div.find('div', class_='button')
-            print("button_div:",button_div)
+            # print("button_div:",button_div)
             if button_div:
                 download_links = []
                 for link in button_div.find_all('a', href=True):
-                    full_url = urljoin(url, link['href'])  # 使用urllib.parse的urljoin函数
-                    print("full_url:",full_url)
-                    download_links.append({'href': full_url, 'text': link.text.strip()})
+                    if "便携" in link.text:
+                        full_url = urljoin(url, link['href'])
+                        # print("full_url:",full_url)
+                        download_links.append({'href': full_url, 'text': link.text.strip()})
     
                 # 将信息添加到列表
                 if version and download_links:
