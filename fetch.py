@@ -44,24 +44,24 @@ while True:
                         date = p_tag.text.split(' ')[-1].strip('[]')
                         print("date:",date)
     
-                # 查找下载链接
-                download_buttons = list_div.find_next_siblings('div', class_='button')
-                download_links = []
-                for button in download_buttons:
-                    for link in button.find_all('a', href=True):
-                        if "便携" in link.text:
-                            full_url = requests.utils.urljoin(url, link['href'])
-                            download_links.append({'href': full_url, 'text': link.text.strip()})
-                            print("download_links:",download_links)
-    
-                # 将信息添加到列表
-                if version and download_links:
-                    combined_info.append({
-                        'version': version,
-                        'date': date,
-                        'download_links': download_links
-                    })
-    
+        # 查找下载链接
+        download_buttons = list_div.find_next_siblings('div', class_='button')
+        download_links = []
+        for button in download_buttons:
+            for link in button.find_all('a', href=True):
+                if "便携" in link.text:
+                    full_url = requests.utils.urljoin(url, link['href'])
+                    download_links.append({'href': full_url, 'text': link.text.strip()})
+                    print("download_links:",download_links)
+
+        # 将信息添加到列表
+        if version and download_links:
+            combined_info.append({
+                'version': version,
+                'date': date,
+                'download_links': download_links
+            })
+
         # 将综合信息保存到JSON文件中
         with open('data.json', 'w', encoding='utf-8') as f:
             json.dump(combined_info, f, ensure_ascii=False, indent=4)
