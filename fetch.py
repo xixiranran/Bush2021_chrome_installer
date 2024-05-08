@@ -31,7 +31,7 @@ while True:
             p_tag = list_div.find('p')
             if p_tag and 'v' in p_tag.text:
                 version = p_tag.text.split('v')[1].split()[0]
-                date = p_tag.text.split(' ')[-1].strip('[]').strip()
+                date = p_tag.text.split(' ')[-1].strip('[').strip(']').strip()
     
             # 在同一.list div中查找.button div以获取下载链接
             button_div = list_div.find('div', class_='button')
