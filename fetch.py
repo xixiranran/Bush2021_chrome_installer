@@ -33,8 +33,8 @@ while True:
                 version = p_tag.text.split('v')[1].split()[0]
                 date = p_tag.text.split(' ')[-1].strip('[]')
     
-            # 查找同级的.button div以获取下载链接
-            button_div = list_div.find_next_sibling('div', class_='button')
+            # 在同一.list div中查找.button div以获取下载链接
+            button_div = list_div.find('div', class_='button')
             print("button_div:",button_div)
             if button_div:
                 download_links = []
