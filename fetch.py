@@ -35,7 +35,7 @@ while True:
                 # 提取日期，注意日期紧跟在'<i>'标签之后，并以'</i>'结束
                 # 提取并清理日期字符串
                 date_tag = p_tag.find('i')
-                date = date_tag.text if date_tag else ''
+                date = date_tag.text.strip("[]") if date_tag else ''
                 print("date:",date)
     
             # 在同一.list div中查找.button div以获取下载链接
