@@ -31,7 +31,7 @@ while True:
             p_tag = list_div.find('p')
             if p_tag and 'v' in p_tag.text:
                 version = p_tag.text.split('v')[1].split()[0]
-                date = p_tag.text.split('<i>')[1].split('</i>')[0]
+                date = p_tag.text.split(' ')[-1].strip('[]')
     
             # 查找同级的.button div以获取下载链接
             button_div = list_div.find_next_sibling('div', class_='button')
