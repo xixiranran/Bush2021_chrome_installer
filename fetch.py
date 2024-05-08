@@ -28,22 +28,26 @@ while True:
     
         # 寻找所有包含版本信息和下载链接的.list div
         for list_div in soup.find_all('div', class_='list'):
-            version_info = list_div.find('p')  # 寻找<p>标签以获取版本信息
-            print("version_info:",version_info)
-            if version_info:
-                # 拆分文本获取版本号和更新时间
-                version_parts = version_info.text.split()
-                if len(version_parts) > 1:  # 确保有足够的文本部分
-                    version = version_parts[0]  # 第一个元素是版本号
-                    # 假设日期紧跟在版本号之后，并且以方括号包围
-                    date = version_parts[1] if version_parts[1].startswith('[') and version_parts[1].endswith(']') else ''
+            # version_info = list_div.find('p')  # 寻找<p>标签以获取版本信息
+            # print("version_info:",version_info)
+            # 寻找所有的<p>标签
+            p_tags = soup.find_all('p')
+    
+            for p_tag in p_tags:
+                # 检查是否包含版本号的格式 vX.X.X.X
+                if p_tag.text.startswith('v') and p_tag.text.count('.') == 3:
+                    # 提取版本号
+                    version = p_tag.text.split()[0]
+                    # 尝试提取日期，假设日期紧跟在版本号之后，并且以方括号包围
+                    if ' [' in p_tag.text:
+                        date = p_tag.text.split(' ')[-1].strip('[]')
     
                 # 查找下载链接
                 download_buttons = list_div.find_next_siblings('div', class_='button')
                 download_links = []
                 for button in download_buttons:
                     for link in button.find_all('a', href=True):
-                        if "便携版" in link.text:
+                        if "便携" in link.text:
                             full_url = requests.utils.urljoin(url, link['href'])
                             download_links.append({'href': full_url, 'text': link.text.strip()})
     
