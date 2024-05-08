@@ -39,6 +39,7 @@ while True:
                 download_links = []
                 for link in button_div.find_all('a', href=True):
                     full_url = requests.utils.urljoin(url, link['href'])
+                    print("full_url:",full_url)
                     download_links.append({'href': full_url, 'text': link.text.strip()})
     
                 # 将信息添加到列表
