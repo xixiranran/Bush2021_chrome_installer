@@ -4,16 +4,8 @@
         "date": "2024-04-16",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_x64.exe",
-                "text": "64位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_x64_portable.exe",
                 "text": "64位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/5.1.1130.82/centbrowser_5.1.1130.82.exe",
-                "text": "32位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/5.1.1130.82/centbrowser_5.1.1130.82_portable.exe",
@@ -26,16 +18,8 @@
         "date": "2023-05-21",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/5.0.1002.354/centbrowser_5.0.1002.354.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/5.0.1002.354/centbrowser_5.0.1002.354_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/5.0.1002.354/centbrowser_5.0.1002.354_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/5.0.1002.354/centbrowser_5.0.1002.354_x64_portable.exe",
@@ -48,16 +32,8 @@
         "date": "2022-12-30",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/5.0.1002.295/centbrowser_5.0.1002.295.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/5.0.1002.295/centbrowser_5.0.1002.295_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/5.0.1002.295/centbrowser_5.0.1002.295_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/5.0.1002.295/centbrowser_5.0.1002.295_x64_portable.exe",
@@ -70,16 +46,8 @@
         "date": "2021-01-06",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.248/centbrowser_4.3.9.248.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.248/centbrowser_4.3.9.248_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.248/centbrowser_4.3.9.248_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.248/centbrowser_4.3.9.248_x64_portable.exe",
@@ -92,16 +60,8 @@
         "date": "2020-12-27",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.241/centbrowser_4.3.9.241.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.241/centbrowser_4.3.9.241_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.241/centbrowser_4.3.9.241_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.241/centbrowser_4.3.9.241_x64_portable.exe",
@@ -114,16 +74,8 @@
         "date": "2020-12-22",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.238/centbrowser_4.3.9.238.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.238/centbrowser_4.3.9.238_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.238/centbrowser_4.3.9.238_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.238/centbrowser_4.3.9.238_x64_portable.exe",
@@ -136,16 +88,8 @@
         "date": "2020-12-10",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.227/centbrowser_4.3.9.227.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.227/centbrowser_4.3.9.227_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.227/centbrowser_4.3.9.227_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.227/centbrowser_4.3.9.227_x64_portable.exe",
@@ -158,16 +102,8 @@
         "date": "2020-12-08",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.226/centbrowser_4.3.9.226.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.226/centbrowser_4.3.9.226_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.3.9.226/centbrowser_4.3.9.226_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.3.9.226/centbrowser_4.3.9.226_x64_portable.exe",
@@ -180,16 +116,8 @@
         "date": "2020-04-23",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.2.10.171/centbrowser_4.2.10.171.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.2.10.171/centbrowser_4.2.10.171_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.2.10.171/centbrowser_4.2.10.171_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.2.10.171/centbrowser_4.2.10.171_x64_portable.exe",
@@ -202,16 +130,8 @@
         "date": "2020-04-08",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.2.9.152/centbrowser_4.2.9.152.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.2.9.152/centbrowser_4.2.9.152_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.2.9.152/centbrowser_4.2.9.152_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.2.9.152/centbrowser_4.2.9.152_x64_portable.exe",
@@ -224,16 +144,8 @@
         "date": "2019-12-22",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.1.7.182/centbrowser_4.1.7.182.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.1.7.182/centbrowser_4.1.7.182_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.1.7.182/centbrowser_4.1.7.182_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.1.7.182/centbrowser_4.1.7.182_x64_portable.exe",
@@ -246,16 +158,8 @@
         "date": "2019-06-03",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.0.9.112/centbrowser_4.0.9.112.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.0.9.112/centbrowser_4.0.9.112_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.0.9.112/centbrowser_4.0.9.112_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.0.9.112/centbrowser_4.0.9.112_x64_portable.exe",
@@ -268,16 +172,8 @@
         "date": "2019-05-30",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/4.0.9.102/centbrowser_4.0.9.102.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/4.0.9.102/centbrowser_4.0.9.102_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/4.0.9.102/centbrowser_4.0.9.102_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/4.0.9.102/centbrowser_4.0.9.102_x64_portable.exe",
@@ -290,16 +186,8 @@
         "date": "2019-03-22",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.9.2.45/centbrowser_3.9.2.45.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.9.2.45/centbrowser_3.9.2.45_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.9.2.45/centbrowser_3.9.2.45_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.9.2.45/centbrowser_3.9.2.45_x64_portable.exe",
@@ -312,16 +200,8 @@
         "date": "2019-02-01",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.8.5.69/centbrowser_3.8.5.69.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.8.5.69/centbrowser_3.8.5.69_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.8.5.69/centbrowser_3.8.5.69_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.8.5.69/centbrowser_3.8.5.69_x64_portable.exe",
@@ -334,16 +214,8 @@
         "date": "2018-11-23",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.7.2.33/centbrowser_3.7.2.33.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.7.2.33/centbrowser_3.7.2.33_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.7.2.33/centbrowser_3.7.2.33_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.7.2.33/centbrowser_3.7.2.33_x64_portable.exe",
@@ -356,16 +228,8 @@
         "date": "2018-10-30]\n",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.6.8.99/centbrowser_3.6.8.99.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.6.8.99/centbrowser_3.6.8.99_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.6.8.99/centbrowser_3.6.8.99_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.6.8.99/centbrowser_3.6.8.99_x64_portable.exe",
@@ -378,16 +242,8 @@
         "date": "2018-10-27]\n",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.6.8.96/centbrowser_3.6.8.96.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.6.8.96/centbrowser_3.6.8.96_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.6.8.96/centbrowser_3.6.8.96_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.6.8.96/centbrowser_3.6.8.96_x64_portable.exe",
@@ -400,16 +256,8 @@
         "date": "2018-07-24]\n",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.50/centbrowser_3.5.3.50.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.50/centbrowser_3.5.3.50_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.50/centbrowser_3.5.3.50_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.50/centbrowser_3.5.3.50_x64_portable.exe",
@@ -422,16 +270,8 @@
         "date": "2018-07-19",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.39/centbrowser_3.5.3.39.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.39/centbrowser_3.5.3.39_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.39/centbrowser_3.5.3.39_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.39/centbrowser_3.5.3.39_x64_portable.exe",
@@ -444,16 +284,8 @@
         "date": "2018-07-16",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.34/centbrowser_3.5.3.34.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.34/centbrowser_3.5.3.34_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.5.3.34/centbrowser_3.5.3.34_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.5.3.34/centbrowser_3.5.3.34_x64_portable.exe",
@@ -466,16 +298,8 @@
         "date": "2018-05-17",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.4.3.39/centbrowser_3.4.3.39.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.4.3.39/centbrowser_3.4.3.39_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.4.3.39/centbrowser_3.4.3.39_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.4.3.39/centbrowser_3.4.3.39_x64_portable.exe",
@@ -488,16 +312,8 @@
         "date": "2018-02-13",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.2.4.23/centbrowser_3.2.4.23.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.2.4.23/centbrowser_3.2.4.23_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.2.4.23/centbrowser_3.2.4.23_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.2.4.23/centbrowser_3.2.4.23_x64_portable.exe",
@@ -510,16 +326,8 @@
         "date": "2018-01-17",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.1.5.52/centbrowser_3.1.5.52.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.1.5.52/centbrowser_3.1.5.52_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.1.5.52/centbrowser_3.1.5.52_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.1.5.52/centbrowser_3.1.5.52_x64_portable.exe",
@@ -532,16 +340,8 @@
         "date": "2017-11-15",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.0.4.29/centbrowser_3.0.4.29.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.0.4.29/centbrowser_3.0.4.29_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.0.4.29/centbrowser_3.0.4.29_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.0.4.29/centbrowser_3.0.4.29_x64_portable.exe",
@@ -554,16 +354,8 @@
         "date": "2017-11-10",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/3.0.4.27/centbrowser_3.0.4.27.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/3.0.4.27/centbrowser_3.0.4.27_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/3.0.4.27/centbrowser_3.0.4.27_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/3.0.4.27/centbrowser_3.0.4.27_x64_portable.exe",
@@ -576,16 +368,8 @@
         "date": "2017-10-01",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.9.4.39/centbrowser_2.9.4.39.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.9.4.39/centbrowser_2.9.4.39_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.9.4.39/centbrowser_2.9.4.39_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.9.4.39/centbrowser_2.9.4.39_x64_portable.exe",
@@ -598,16 +382,8 @@
         "date": "2017-08-28",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.8.5.75/centbrowser_2.8.5.75.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.8.5.75/centbrowser_2.8.5.75_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.8.5.75/centbrowser_2.8.5.75_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.8.5.75/centbrowser_2.8.5.75_x64_portable.exe",
@@ -620,16 +396,8 @@
         "date": "2017-08-20",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.8.3.58/centbrowser_2.8.3.58.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.8.3.58/centbrowser_2.8.3.58_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.8.3.58/centbrowser_2.8.3.58_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.8.3.58/centbrowser_2.8.3.58_x64_portable.exe",
@@ -642,16 +410,8 @@
         "date": "2017-07-20",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.7.4.52/centbrowser_2.7.4.52.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.7.4.52/centbrowser_2.7.4.52_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.7.4.52/centbrowser_2.7.4.52_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.7.4.52/centbrowser_2.7.4.52_x64_portable.exe",
@@ -664,16 +424,8 @@
         "date": "2017-05-28",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.6.5.52/centbrowser_2.6.5.52.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.6.5.52/centbrowser_2.6.5.52_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.6.5.52/centbrowser_2.6.5.52_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.6.5.52/centbrowser_2.6.5.52_x64_portable.exe",
@@ -686,16 +438,8 @@
         "date": "2017-04-09",
         "download_links": [
             {
-                "href": "https://static.centbrowser.cn/win_stable/2.5.6.57/centbrowser_2.5.6.57.exe",
-                "text": "32位安装版"
-            },
-            {
                 "href": "https://static.centbrowser.cn/win_stable/2.5.6.57/centbrowser_2.5.6.57_portable.exe",
                 "text": "32位便携版"
-            },
-            {
-                "href": "https://static.centbrowser.cn/win_stable/2.5.6.57/centbrowser_2.5.6.57_x64.exe",
-                "text": "64位安装版"
             },
             {
                 "href": "https://static.centbrowser.cn/win_stable/2.5.6.57/centbrowser_2.5.6.57_x64_portable.exe",
