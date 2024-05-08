@@ -49,13 +49,14 @@ while True:
                     
                     # 查找下载链接
                     download_buttons = list_div.find_next_sibling('div', class_='button')
+                    print("download_buttons:",download_buttons)
                     if download_buttons:
                         download_links = []
                         for link in download_buttons.find_all('a', href=True):
-                            if "便携" in link.text:
-                                full_url = urljoin(url, link['href'])
-                                print("full_url:",full_url)
-                                download_links.append({'href': full_url, 'text': link.text.strip()})
+                            # if "便携" in link.text:
+                            full_url = urljoin(url, link['href'])
+                            print("full_url:",full_url)
+                            download_links.append({'href': full_url, 'text': link.text.strip()})
     
                         # 将信息添加到列表
                         if download_links:
